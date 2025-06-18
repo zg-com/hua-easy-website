@@ -1,0 +1,90 @@
+/* AI助手页面样式 */
+.ai-container {
+    padding: 40px 0;
+    background: #f9fafb;
+    min-height: calc(100vh - 120px);
+}
+
+.ai-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.ai-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    background: linear-gradient(135deg, #1a56db, #0e2a5c);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: white;
+}
+
+.ai-conversation {
+    height: 60vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 12px 16px;
+    border-radius: 18px;
+    max-width: 80%;
+    line-height: 1.5;
+}
+
+.user-message {
+    background: #dbeafe;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+}
+
+.ai-message {
+    background: #f1f5f9;
+    margin-right: auto;
+    border-bottom-left-radius: 4px;
+}
+
+.loading {
+    background: #f1f5f9;
+    color: #64748b;
+    font-style: italic;
+}
+
+.ai-input {
+    display: flex;
+    gap: 10px;
+}
+
+.ai-input input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: 24px;
+    font-size: 16px;
+}
+
+.ai-input button {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #1a56db;
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ai-input button:hover {
+    background: #0d4bc2;
+    transform: scale(1.05);
+}

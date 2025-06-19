@@ -1,0 +1,133 @@
+/* ===== 服务页面共用样式 ===== */
+.service-details {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 32px;
+    color: var(--dark);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 18px;
+    color: var(--gray);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.feature-content ul {
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+.feature-content li {
+    margin-bottom: 8px;
+    color: var(--gray-dark);
+    position: relative;
+}
+
+.feature-content li:before {
+    content: "•";
+    color: var(--primary);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.process-step h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.additional-tabs {
+    display: flex;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    padding: 12px 25px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-btn.active {
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--primary);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* 活动卡片样式 */
+.event-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.event-info {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.event-date {
+    background: var(--primary);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.event-date .day {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.event-date .month {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.event-location {
+    display: flex;
+    align-items: center;
+    color: var(--gray);
+}
+
+.event-location i {
+    margin-right: 8px;
+}

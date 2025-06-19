@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>华e通 | 一站式来华服务平台</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/service.css">
     <style>
         :root {
             --primary: #1a56db;
@@ -649,22 +647,22 @@
                 
                 <nav>
                     <ul>
-                        <li><a href="../index.html">首页</a></li>
-                        <li><a href="../index.html#services">服务</a></li>
-                        <li><a href="../index.html#app">APP下载</a></li>
-                        <li><a href="../index.html#about">关于我们</a></li>
-                        <li><a href="../index.html#resources">资源中心</a></li>
-                        <li><a href="../index.html#contact">联系我们</a></li>
+                        <li><a href="../index.html" data-translate="nav_home">首页</a></li>
+                        <li><a href="../index.html#services" data-translate="nav_services">服务</a></li>
+                        <li><a href="../index.html#app" data-translate="nav_app">APP下载</a></li>
+                        <li><a href="../index.html#about" data-translate="nav_about">关于我们</a></li>
+                        <li><a href="../index.html#resources" data-translate="nav_resources">资源中心</a></li>
+                        <li><a href="../index.html#contact" data-translate="nav_contact">联系我们</a></li>
                     </ul>
                 </nav>
                 
                 <div class="header-actions">
-                    <div class="language-switcher">
+                    <div class="language-switcher" id="languageSwitcher">
                         <i class="fas fa-globe"></i>
-                        <span>English</span>
+                        <span data-translate="current_language">English</span>
                     </div>
-                    <a href="#" class="btn btn-outline">登录</a>
-                    <a href="#" class="btn btn-primary">注册</a>
+                    <a href="#" class="btn btn-outline" data-translate="btn_login">登录</a>
+                    <a href="#" class="btn btn-primary" data-translate="btn_register">注册</a>
                 </div>
             </div>
         </div>
@@ -673,11 +671,11 @@
     <!-- 未来规划服务页面的Hero区域 -->
     <section class="service-hero">
         <div class="container">
-            <h1>未来规划服务</h1>
-            <p>为您的长期发展提供专业指导，帮助您实现在中国的生活与职业目标</p>
+            <h1 data-translate="service_hero_title">未来规划服务</h1>
+            <p data-translate="service_hero_subtitle">为您的长期发展提供专业指导，帮助您实现在中国的生活与职业目标</p>
             <div class="hero-actions">
-                <a href="../ai-chat.html" class="btn btn-primary">AI咨询</a>
-                <a href="#process" class="btn btn-outline">了解服务流程</a>
+                <a href="../ai-chat.html" class="btn btn-primary" data-translate="btn_ai_consult">AI咨询</a>
+                <a href="#process" class="btn btn-outline" data-translate="btn_process">了解服务流程</a>
             </div>
         </div>
     </section>
@@ -685,8 +683,8 @@
     <div class="container service-container">
         <!-- 服务功能区域 -->
         <section>
-            <h2 class="section-title">未来规划服务内容</h2>
-            <p class="section-subtitle">全面支持您的个人与职业发展</p>
+            <h2 class="section-title" data-translate="service_features_title">未来规划服务内容</h2>
+            <p class="section-subtitle" data-translate="service_features_subtitle">全面支持您的个人与职业发展</p>
             
             <div class="service-features-grid">
                 <div class="service-feature-card">
@@ -694,14 +692,14 @@
                         <i class="fas fa-home"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>长期居留规划</h3>
-                        <p>为您的长期中国生活提供专业指导</p>
+                        <h3 data-translate="feature_title_1">长期居留规划</h3>
+                        <p data-translate="feature_desc_1">为您的长期中国生活提供专业指导</p>
                         <ul>
-                            <li>永久居留资格评估</li>
-                            <li>绿卡申请指导</li>
-                            <li>家庭团聚签证办理</li>
-                            <li>长期住房解决方案</li>
-                            <li>子女教育规划</li>
+                            <li data-translate="feature_item_1_1">永久居留资格评估</li>
+                            <li data-translate="feature_item_1_2">绿卡申请指导</li>
+                            <li data-translate="feature_item_1_3">家庭团聚签证办理</li>
+                            <li data-translate="feature_item_1_4">长期住房解决方案</li>
+                            <li data-translate="feature_item_1_5">子女教育规划</li>
                         </ul>
                     </div>
                 </div>
@@ -711,14 +709,14 @@
                         <i class="fas fa-plane-departure"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>出境回国过渡</h3>
-                        <p>协助您顺利离开中国返回祖国</p>
+                        <h3 data-translate="feature_title_2">出境回国过渡</h3>
+                        <p data-translate="feature_desc_2">协助您顺利离开中国返回祖国</p>
                         <ul>
-                            <li>离境手续办理</li>
-                            <li>税务清算咨询</li>
-                            <li>资产转移指导</li>
-                            <li>回国就业对接</li>
-                            <li>文化再适应指导</li>
+                            <li data-translate="feature_item_2_1">离境手续办理</li>
+                            <li data-translate="feature_item_2_2">税务清算咨询</li>
+                            <li data-translate="feature_item_2_3">资产转移指导</li>
+                            <li data-translate="feature_item_2_4">回国就业对接</li>
+                            <li data-translate="feature_item_2_5">文化再适应指导</li>
                         </ul>
                     </div>
                 </div>
@@ -728,14 +726,14 @@
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>职业发展指导</h3>
-                        <p>助力您的职业生涯规划与发展</p>
+                        <h3 data-translate="feature_title_3">职业发展指导</h3>
+                        <p data-translate="feature_desc_3">助力您的职业生涯规划与发展</p>
                         <ul>
-                            <li>职业能力评估</li>
-                            <li>行业趋势分析</li>
-                            <li>简历优化与面试指导</li>
-                            <li>薪资谈判技巧</li>
-                            <li>职业转型咨询</li>
+                            <li data-translate="feature_item_3_1">职业能力评估</li>
+                            <li data-translate="feature_item_3_2">行业趋势分析</li>
+                            <li data-translate="feature_item_3_3">简历优化与面试指导</li>
+                            <li data-translate="feature_item_3_4">薪资谈判技巧</li>
+                            <li data-translate="feature_item_3_5">职业转型咨询</li>
                         </ul>
                     </div>
                 </div>
@@ -745,14 +743,14 @@
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>投资创业支持</h3>
-                        <p>为您的创业梦想提供专业支持</p>
+                        <h3 data-translate="feature_title_4">投资创业支持</h3>
+                        <p data-translate="feature_desc_4">为您的创业梦想提供专业支持</p>
                         <ul>
-                            <li>创业政策咨询</li>
-                            <li>市场调研与分析</li>
-                            <li>公司注册指导</li>
-                            <li>融资渠道对接</li>
-                            <li>政府补贴申请</li>
+                            <li data-translate="feature_item_4_1">创业政策咨询</li>
+                            <li data-translate="feature_item_4_2">市场调研与分析</li>
+                            <li data-translate="feature_item_4_3">公司注册指导</li>
+                            <li data-translate="feature_item_4_4">融资渠道对接</li>
+                            <li data-translate="feature_item_4_5">政府补贴申请</li>
                         </ul>
                     </div>
                 </div>
@@ -762,14 +760,14 @@
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>继续教育规划</h3>
-                        <p>助力您的教育与技能提升</p>
+                        <h3 data-translate="feature_title_5">继续教育规划</h3>
+                        <p data-translate="feature_desc_5">助力您的教育与技能提升</p>
                         <ul>
-                            <li>学位课程咨询</li>
-                            <li>专业认证指导</li>
-                            <li>语言能力提升</li>
-                            <li>职业技能培训</li>
-                            <li>国际证书获取</li>
+                            <li data-translate="feature_item_5_1">学位课程咨询</li>
+                            <li data-translate="feature_item_5_2">专业认证指导</li>
+                            <li data-translate="feature_item_5_3">语言能力提升</li>
+                            <li data-translate="feature_item_5_4">职业技能培训</li>
+                            <li data-translate="feature_item_5_5">国际证书获取</li>
                         </ul>
                     </div>
                 </div>
@@ -779,14 +777,14 @@
                         <i class="fas fa-hand-holding-usd"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>财务规划管理</h3>
-                        <p>为您的财务未来保驾护航</p>
+                        <h3 data-translate="feature_title_6">财务规划管理</h3>
+                        <p data-translate="feature_desc_6">为您的财务未来保驾护航</p>
                         <ul>
-                            <li>投资理财咨询</li>
-                            <li>税务优化规划</li>
-                            <li>退休计划制定</li>
-                            <li>保险方案定制</li>
-                            <li>跨境资产配置</li>
+                            <li data-translate="feature_item_6_1">投资理财咨询</li>
+                            <li data-translate="feature_item_6_2">税务优化规划</li>
+                            <li data-translate="feature_item_6_3">退休计划制定</li>
+                            <li data-translate="feature_item_6_4">保险方案定制</li>
+                            <li data-translate="feature_item_6_5">跨境资产配置</li>
                         </ul>
                     </div>
                 </div>
@@ -795,21 +793,21 @@
         
         <!-- 规划类型区域 -->
         <section id="planning-types">
-            <h2 class="section-title">规划方案类型</h2>
-            <p class="section-subtitle">根据您的不同需求提供定制化解决方案</p>
+            <h2 class="section-title" data-translate="planning_types_title">规划方案类型</h2>
+            <p class="section-subtitle" data-translate="planning_types_subtitle">根据您的不同需求提供定制化解决方案</p>
             
             <div class="planning-types">
                 <div class="planning-type">
                     <div class="type-icon">
                         <i class="fas fa-user-graduate"></i>
                     </div>
-                    <h3>学生规划方案</h3>
-                    <p>专为留学生设计的未来发展规划</p>
+                    <h3 data-translate="planning_type_1">学生规划方案</h3>
+                    <p data-translate="planning_type_desc_1">专为留学生设计的未来发展规划</p>
                     <ul>
-                        <li>学业发展规划</li>
-                        <li>实习与就业衔接</li>
-                        <li>签证延期服务</li>
-                        <li>继续深造指导</li>
+                        <li data-translate="planning_item_1_1">学业发展规划</li>
+                        <li data-translate="planning_item_1_2">实习与就业衔接</li>
+                        <li data-translate="planning_item_1_3">签证延期服务</li>
+                        <li data-translate="planning_item_1_4">继续深造指导</li>
                     </ul>
                 </div>
                 
@@ -817,13 +815,13 @@
                     <div class="type-icon">
                         <i class="fas fa-user-tie"></i>
                     </div>
-                    <h3>职业人士规划</h3>
-                    <p>职场人士的职业发展与生活规划</p>
+                    <h3 data-translate="planning_type_2">职业人士规划</h3>
+                    <p data-translate="planning_type_desc_2">职场人士的职业发展与生活规划</p>
                     <ul>
-                        <li>职业晋升路径</li>
-                        <li>行业转换指导</li>
-                        <li>高管发展计划</li>
-                        <li>工作生活平衡</li>
+                        <li data-translate="planning_item_2_1">职业晋升路径</li>
+                        <li data-translate="planning_item_2_2">行业转换指导</li>
+                        <li data-translate="planning_item_2_3">高管发展计划</li>
+                        <li data-translate="planning_item_2_4">工作生活平衡</li>
                     </ul>
                 </div>
                 
@@ -831,13 +829,13 @@
                     <div class="type-icon">
                         <i class="fas fa-users"></i>
                     </div>
-                    <h3>家庭整体规划</h3>
-                    <p>全家在华生活的长期规划方案</p>
+                    <h3 data-translate="planning_type_3">家庭整体规划</h3>
+                    <p data-translate="planning_type_desc_3">全家在华生活的长期规划方案</p>
                     <ul>
-                        <li>家庭居留规划</li>
-                        <li>子女教育路径</li>
-                        <li>家庭财务规划</li>
-                        <li>家庭健康管理</li>
+                        <li data-translate="planning_item_3_1">家庭居留规划</li>
+                        <li data-translate="planning_item_3_2">子女教育路径</li>
+                        <li data-translate="planning_item_3_3">家庭财务规划</li>
+                        <li data-translate="planning_item_3_4">家庭健康管理</li>
                     </ul>
                 </div>
             </div>
@@ -845,76 +843,76 @@
         
         <!-- 规划时间线区域 -->
         <section class="timeline-section" id="process">
-            <h2 class="section-title">规划实施时间线</h2>
-            <p class="section-subtitle">科学规划，分步实施，实现理想未来</p>
+            <h2 class="section-title" data-translate="timeline_title">规划实施时间线</h2>
+            <p class="section-subtitle" data-translate="timeline_subtitle">科学规划，分步实施，实现理想未来</p>
             
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <div class="timeline-year">初始阶段</div>
-                        <h3>需求分析与评估</h3>
-                        <p>深入了解您的背景、目标、优势和挑战，进行全面评估</p>
+                        <div class="timeline-year" data-translate="timeline_year_1">初始阶段</div>
+                        <h3 data-translate="timeline_title_1">需求分析与评估</h3>
+                        <p data-translate="timeline_desc_1">深入了解您的背景、目标、优势和挑战，进行全面评估</p>
                         <ul>
-                            <li>个人能力评估</li>
-                            <li>资源状况分析</li>
-                            <li>目标设定会议</li>
-                            <li>可行性研究</li>
+                            <li data-translate="timeline_item_1_1">个人能力评估</li>
+                            <li data-translate="timeline_item_1_2">资源状况分析</li>
+                            <li data-translate="timeline_item_1_3">目标设定会议</li>
+                            <li data-translate="timeline_item_1_4">可行性研究</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <div class="timeline-year">1-3个月</div>
-                        <h3>方案设计与定制</h3>
-                        <p>根据评估结果，设计个性化规划方案</p>
+                        <div class="timeline-year" data-translate="timeline_year_2">1-3个月</div>
+                        <h3 data-translate="timeline_title_2">方案设计与定制</h3>
+                        <p data-translate="timeline_desc_2">根据评估结果，设计个性化规划方案</p>
                         <ul>
-                            <li>制定分阶段目标</li>
-                            <li>资源整合计划</li>
-                            <li>时间表制定</li>
-                            <li>备选方案准备</li>
+                            <li data-translate="timeline_item_2_1">制定分阶段目标</li>
+                            <li data-translate="timeline_item_2_2">资源整合计划</li>
+                            <li data-translate="timeline_item_2_3">时间表制定</li>
+                            <li data-translate="timeline_item_2_4">备选方案准备</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <div class="timeline-year">3-6个月</div>
-                        <h3>方案实施与支持</h3>
-                        <p>执行规划方案，提供全方位支持</p>
+                        <div class="timeline-year" data-translate="timeline_year_3">3-6个月</div>
+                        <h3 data-translate="timeline_title_3">方案实施与支持</h3>
+                        <p data-translate="timeline_desc_3">执行规划方案，提供全方位支持</p>
                         <ul>
-                            <li>资源对接</li>
-                            <li>技能培训</li>
-                            <li>进度跟踪</li>
-                            <li>问题解决</li>
+                            <li data-translate="timeline_item_3_1">资源对接</li>
+                            <li data-translate="timeline_item_3_2">技能培训</li>
+                            <li data-translate="timeline_item_3_3">进度跟踪</li>
+                            <li data-translate="timeline_item_3_4">问题解决</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <div class="timeline-year">6-12个月</div>
-                        <h3>中期评估与调整</h3>
-                        <p>评估实施效果，调整优化方案</p>
+                        <div class="timeline-year" data-translate="timeline_year_4">6-12个月</div>
+                        <h3 data-translate="timeline_title_4">中期评估与调整</h3>
+                        <p data-translate="timeline_desc_4">评估实施效果，调整优化方案</p>
                         <ul>
-                            <li>成效评估</li>
-                            <li>方案调整</li>
-                            <li>新机会发掘</li>
-                            <li>目标再确认</li>
+                            <li data-translate="timeline_item_4_1">成效评估</li>
+                            <li data-translate="timeline_item_4_2">方案调整</li>
+                            <li data-translate="timeline_item_4_3">新机会发掘</li>
+                            <li data-translate="timeline_item_4_4">目标再确认</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <div class="timeline-year">长期</div>
-                        <h3>持续发展与优化</h3>
-                        <p>实现目标，持续优化发展路径</p>
+                        <div class="timeline-year" data-translate="timeline_year_5">长期</div>
+                        <h3 data-translate="timeline_title_5">持续发展与优化</h3>
+                        <p data-translate="timeline_desc_5">实现目标，持续优化发展路径</p>
                         <ul>
-                            <li>长期跟踪支持</li>
-                            <li>新目标设定</li>
-                            <li>资源网络维护</li>
-                            <li>终身发展指导</li>
+                            <li data-translate="timeline_item_5_1">长期跟踪支持</li>
+                            <li data-translate="timeline_item_5_2">新目标设定</li>
+                            <li data-translate="timeline_item_5_3">资源网络维护</li>
+                            <li data-translate="timeline_item_5_4">终身发展指导</li>
                         </ul>
                     </div>
                 </div>
@@ -923,22 +921,22 @@
         
         <!-- 行动号召区域 -->
         <section class="service-cta-section">
-            <h2>规划您的理想未来</h2>
-            <p>立即预约专业规划师，开启您的未来发展之路</p>
+            <h2 data-translate="cta_title">规划您的理想未来</h2>
+            <p data-translate="cta_subtitle">立即预约专业规划师，开启您的未来发展之路</p>
             <div class="cta-buttons">
-                <a href="../ai-chat.html" class="btn btn-light btn-large">咨询规划顾问</a>
-                <a href="#" class="btn btn-outline-light btn-large">预约规划服务</a>
+                <a href="../ai-chat.html" class="btn btn-light btn-large" data-translate="btn_consult_planner">咨询规划顾问</a>
+                <a href="#" class="btn btn-outline-light btn-large" data-translate="btn_book_service">预约规划服务</a>
             </div>
         </section>
     </div>
 
-    <!-- 页脚 - 与主页完全一致 -->
+    <!-- 页脚 -->
     <footer id="contact">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="logo-text" style="color: white; font-size: 28px; margin-bottom: 20px;">China<span style="color: #f87171;">Easy</span></div>
-                    <p>让世界感受中国温度，零距离探索中国文化与生活。</p>
+                    <p data-translate="footer_slogan">让世界感受中国温度，零距离探索中国文化与生活。</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-weixin"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -948,33 +946,33 @@
                 </div>
                 
                 <div class="footer-col">
-                    <h3>快速链接</h3>
+                    <h3 data-translate="footer_quick_links">快速链接</h3>
                     <ul class="footer-links">
-                        <li><a href="../index.html">首页</a></li>
-                        <li><a href="../index.html#services">服务项目</a></li>
-                        <li><a href="../index.html#app">APP下载</a></li>
-                        <li><a href="../index.html#resources">资源中心</a></li>
-                        <li><a href="../index.html#about">关于我们</a></li>
+                        <li><a href="../index.html" data-translate="nav_home">首页</a></li>
+                        <li><a href="../index.html#services" data-translate="nav_services">服务项目</a></li>
+                        <li><a href="../index.html#app" data-translate="nav_app">APP下载</a></li>
+                        <li><a href="../index.html#resources" data-translate="nav_resources">资源中心</a></li>
+                        <li><a href="../index.html#about" data-translate="nav_about">关于我们</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3>服务类别</h3>
+                    <h3 data-translate="footer_services">服务类别</h3>
                     <ul class="footer-links">
-                        <li><a href="entry-service.html">入境对接服务</a></li>
-                        <li><a href="daily-service.html">日常生活服务</a></li>
-                        <li><a href="culture-service.html">文化体验活动</a></li>
-                        <li><a href="study-service.html">学习工作支持</a></li>
-                        <li><a href="future-service.html">未来规划服务</a></li>
+                        <li><a href="entry-service.html" data-translate="service_entry">入境对接服务</a></li>
+                        <li><a href="daily-service.html" data-translate="service_daily">日常生活服务</a></li>
+                        <li><a href="culture-service.html" data-translate="service_culture">文化体验活动</a></li>
+                        <li><a href="study-service.html" data-translate="service_study">学习工作支持</a></li>
+                        <li><a href="future-service.html" data-translate="service_future">未来规划服务</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3>联系我们</h3>
+                    <h3 data-translate="footer_contact">联系我们</h3>
                     <ul class="footer-contact">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>中国青岛市崂山区松岭路99号</span>
+                            <span data-translate="contact_address">中国青岛市崂山区松岭路99号</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
@@ -986,31 +984,382 @@
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
-                            <span>周一至周五: 9:00 - 18:00</span>
+                            <span data-translate="contact_hours">周一至周五: 9:00 - 18:00</span>
                         </li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 华易国际服务有限公司. 保留所有权利. | 鲁ICP备12345678号</p>
+                <p>&copy; 2023 华易国际服务有限公司. <span data-translate="copyright_text">保留所有权利</span>. | 鲁ICP备12345678号</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // 翻译字典
+        const translations = {
+            en: {
+                // 导航
+                "nav_home": "Home",
+                "nav_services": "Services",
+                "nav_app": "App Download",
+                "nav_about": "About Us",
+                "nav_resources": "Resources",
+                "nav_contact": "Contact Us",
+                "btn_login": "Login",
+                "btn_register": "Register",
+                "current_language": "中文",
+                
+                // Hero区域
+                "service_hero_title": "Future Planning Services",
+                "service_hero_subtitle": "Professional guidance for your long-term development in China",
+                "btn_ai_consult": "AI Consultation",
+                "btn_process": "Learn Service Process",
+                
+                // 服务功能区域
+                "service_features_title": "Future Planning Services",
+                "service_features_subtitle": "Comprehensive support for your personal and career development",
+                
+                // 卡片内容
+                "feature_title_1": "Long-term Residency Planning",
+                "feature_desc_1": "Professional guidance for your long-term life in China",
+                "feature_item_1_1": "Permanent residency eligibility assessment",
+                "feature_item_1_2": "Green card application guidance",
+                "feature_item_1_3": "Family reunion visa processing",
+                "feature_item_1_4": "Long-term housing solutions",
+                "feature_item_1_5": "Children's education planning",
+                
+                "feature_title_2": "Exit and Return Transition",
+                "feature_desc_2": "Assisting you to leave China and return to your home country smoothly",
+                "feature_item_2_1": "Exit procedures processing",
+                "feature_item_2_2": "Tax clearance consultation",
+                "feature_item_2_3": "Asset transfer guidance",
+                "feature_item_2_4": "Employment connection upon return",
+                "feature_item_2_5": "Cultural re-adaptation guidance",
+                
+                "feature_title_3": "Career Development Guidance",
+                "feature_desc_3": "Supporting your career planning and development",
+                "feature_item_3_1": "Career aptitude assessment",
+                "feature_item_3_2": "Industry trend analysis",
+                "feature_item_3_3": "Resume optimization and interview coaching",
+                "feature_item_3_4": "Salary negotiation skills",
+                "feature_item_3_5": "Career transition consulting",
+                
+                "feature_title_4": "Investment and Entrepreneurship Support",
+                "feature_desc_4": "Professional support for your entrepreneurial dreams",
+                "feature_item_4_1": "Startup policy consultation",
+                "feature_item_4_2": "Market research and analysis",
+                "feature_item_4_3": "Company registration guidance",
+                "feature_item_4_4": "Financing channel connection",
+                "feature_item_4_5": "Government subsidy application",
+                
+                "feature_title_5": "Continuing Education Planning",
+                "feature_desc_5": "Supporting your education and skill enhancement",
+                "feature_item_5_1": "Degree program consultation",
+                "feature_item_5_2": "Professional certification guidance",
+                "feature_item_5_3": "Language proficiency improvement",
+                "feature_item_5_4": "Vocational skills training",
+                "feature_item_5_5": "International certificate acquisition",
+                
+                "feature_title_6": "Financial Planning Management",
+                "feature_desc_6": "Safeguarding your financial future",
+                "feature_item_6_1": "Investment and wealth management consultation",
+                "feature_item_6_2": "Tax optimization planning",
+                "feature_item_6_3": "Retirement plan development",
+                "feature_item_6_4": "Insurance plan customization",
+                "feature_item_6_5": "Cross-border asset allocation",
+                
+                // 规划类型区域
+                "planning_types_title": "Planning Solutions",
+                "planning_types_subtitle": "Customized solutions based on your different needs",
+                
+                "planning_type_1": "Student Planning Solution",
+                "planning_type_desc_1": "Future development plan designed for international students",
+                "planning_item_1_1": "Academic development planning",
+                "planning_item_1_2": "Internship and employment transition",
+                "planning_item_1_3": "Visa extension services",
+                "planning_item_1_4": "Further education guidance",
+                
+                "planning_type_2": "Professional Planning",
+                "planning_type_desc_2": "Career development and life planning for professionals",
+                "planning_item_2_1": "Career advancement path",
+                "planning_item_2_2": "Industry transition guidance",
+                "planning_item_2_3": "Executive development program",
+                "planning_item_2_4": "Work-life balance",
+                
+                "planning_type_3": "Family Comprehensive Planning",
+                "planning_type_desc_3": "Long-term planning solution for family life in China",
+                "planning_item_3_1": "Family residency planning",
+                "planning_item_3_2": "Children's education path",
+                "planning_item_3_3": "Family financial planning",
+                "planning_item_3_4": "Family health management",
+                
+                // 时间线区域
+                "timeline_title": "Planning Implementation Timeline",
+                "timeline_subtitle": "Scientific planning, step-by-step implementation, achieving ideal future",
+                
+                "timeline_year_1": "Initial Stage",
+                "timeline_title_1": "Needs Analysis and Assessment",
+                "timeline_desc_1": "In-depth understanding of your background, goals, strengths and challenges",
+                "timeline_item_1_1": "Personal capability assessment",
+                "timeline_item_1_2": "Resource status analysis",
+                "timeline_item_1_3": "Goal setting meeting",
+                "timeline_item_1_4": "Feasibility study",
+                
+                "timeline_year_2": "1-3 Months",
+                "timeline_title_2": "Solution Design and Customization",
+                "timeline_desc_2": "Design personalized planning solution based on assessment results",
+                "timeline_item_2_1": "Set phased goals",
+                "timeline_item_2_2": "Resource integration plan",
+                "timeline_item_2_3": "Timetable development",
+                "timeline_item_2_4": "Alternative solution preparation",
+                
+                "timeline_year_3": "3-6 Months",
+                "timeline_title_3": "Solution Implementation and Support",
+                "timeline_desc_3": "Execute planning solution with comprehensive support",
+                "timeline_item_3_1": "Resource connection",
+                "timeline_item_3_2": "Skills training",
+                "timeline_item_3_3": "Progress tracking",
+                "timeline_item_3_4": "Problem solving",
+                
+                "timeline_year_4": "6-12 Months",
+                "timeline_title_4": "Mid-term Evaluation and Adjustment",
+                "timeline_desc_4": "Evaluate implementation effectiveness and optimize solution",
+                "timeline_item_4_1": "Effectiveness evaluation",
+                "timeline_item_4_2": "Solution adjustment",
+                "timeline_item_4_3": "New opportunity exploration",
+                "timeline_item_4_4": "Goal reconfirmation",
+                
+                "timeline_year_5": "Long-term",
+                "timeline_title_5": "Continuous Development and Optimization",
+                "timeline_desc_5": "Achieve goals and continuously optimize development path",
+                "timeline_item_5_1": "Long-term tracking support",
+                "timeline_item_5_2": "New goal setting",
+                "timeline_item_5_3": "Resource network maintenance",
+                "timeline_item_5_4": "Lifelong development guidance",
+                
+                // 行动号召区域
+                "cta_title": "Plan Your Ideal Future",
+                "cta_subtitle": "Book a professional planner now and start your future development journey",
+                "btn_consult_planner": "Consult Planning Advisor",
+                "btn_book_service": "Book Planning Service",
+                
+                // 页脚
+                "footer_slogan": "Let the world feel the warmth of China, explore Chinese culture and life up close",
+                "footer_quick_links": "Quick Links",
+                "footer_services": "Service Categories",
+                "footer_contact": "Contact Us",
+                "service_entry": "Entry Assistance",
+                "service_daily": "Daily Life Services",
+                "service_culture": "Cultural Activities",
+                "service_study": "Study & Work Support",
+                "service_future": "Future Planning Services",
+                "contact_address": "No. 99 Songling Road, Laoshan District, Qingdao, China",
+                "contact_hours": "Monday to Friday: 9:00 - 18:00",
+                "copyright_text": "All Rights Reserved"
+            },
+            zh: {
+                // 导航
+                "nav_home": "首页",
+                "nav_services": "服务",
+                "nav_app": "APP下载",
+                "nav_about": "关于我们",
+                "nav_resources": "资源中心",
+                "nav_contact": "联系我们",
+                "btn_login": "登录",
+                "btn_register": "注册",
+                "current_language": "English",
+                
+                // Hero区域
+                "service_hero_title": "未来规划服务",
+                "service_hero_subtitle": "为您的长期发展提供专业指导，帮助您实现在中国的生活与职业目标",
+                "btn_ai_consult": "AI咨询",
+                "btn_process": "了解服务流程",
+                
+                // 服务功能区域
+                "service_features_title": "未来规划服务内容",
+                "service_features_subtitle": "全面支持您的个人与职业发展",
+                
+                // 卡片内容
+                "feature_title_1": "长期居留规划",
+                "feature_desc_1": "为您的长期中国生活提供专业指导",
+                "feature_item_1_1": "永久居留资格评估",
+                "feature_item_1_2": "绿卡申请指导",
+                "feature_item_1_3": "家庭团聚签证办理",
+                "feature_item_1_4": "长期住房解决方案",
+                "feature_item_1_5": "子女教育规划",
+                
+                "feature_title_2": "出境回国过渡",
+                "feature_desc_2": "协助您顺利离开中国返回祖国",
+                "feature_item_2_1": "离境手续办理",
+                "feature_item_2_2": "税务清算咨询",
+                "feature_item_2_3": "资产转移指导",
+                "feature_item_2_4": "回国就业对接",
+                "feature_item_2_5": "文化再适应指导",
+                
+                "feature_title_3": "职业发展指导",
+                "feature_desc_3": "助力您的职业生涯规划与发展",
+                "feature_item_3_1": "职业能力评估",
+                "feature_item_3_2": "行业趋势分析",
+                "feature_item_3_3": "简历优化与面试指导",
+                "feature_item_3_4": "薪资谈判技巧",
+                "feature_item_3_5": "职业转型咨询",
+                
+                "feature_title_4": "投资创业支持",
+                "feature_desc_4": "为您的创业梦想提供专业支持",
+                "feature_item_4_1": "创业政策咨询",
+                "feature_item_4_2": "市场调研与分析",
+                "feature_item_4_3": "公司注册指导",
+                "feature_item_4_4": "融资渠道对接",
+                "feature_item_4_5": "政府补贴申请",
+                
+                "feature_title_5": "继续教育规划",
+                "feature_desc_5": "助力您的教育与技能提升",
+                "feature_item_5_1": "学位课程咨询",
+                "feature_item_5_2": "专业认证指导",
+                "feature_item_5_3": "语言能力提升",
+                "feature_item_5_4": "职业技能培训",
+                "feature_item_5_5": "国际证书获取",
+                
+                "feature_title_6": "财务规划管理",
+                "feature_desc_6": "为您的财务未来保驾护航",
+                "feature_item_6_1": "投资理财咨询",
+                "feature_item_6_2": "税务优化规划",
+                "feature_item_6_3": "退休计划制定",
+                "feature_item_6_4": "保险方案定制",
+                "feature_item_6_5": "跨境资产配置",
+                
+                // 规划类型区域
+                "planning_types_title": "规划方案类型",
+                "planning_types_subtitle": "根据您的不同需求提供定制化解决方案",
+                
+                "planning_type_1": "学生规划方案",
+                "planning_type_desc_1": "专为留学生设计的未来发展规划",
+                "planning_item_1_1": "学业发展规划",
+                "planning_item_1_2": "实习与就业衔接",
+                "planning_item_1_3": "签证延期服务",
+                "planning_item_1_4": "继续深造指导",
+                
+                "planning_type_2": "职业人士规划",
+                "planning_type_desc_2": "职场人士的职业发展与生活规划",
+                "planning_item_2_1": "职业晋升路径",
+                "planning_item_2_2": "行业转换指导",
+                "planning_item_2_3": "高管发展计划",
+                "planning_item_2_4": "工作生活平衡",
+                
+                "planning_type_3": "家庭整体规划",
+                "planning_type_desc_3": "全家在华生活的长期规划方案",
+                "planning_item_3_1": "家庭居留规划",
+                "planning_item_3_2": "子女教育路径",
+                "planning_item_3_3": "家庭财务规划",
+                "planning_item_3_4": "家庭健康管理",
+                
+                // 时间线区域
+                "timeline_title": "规划实施时间线",
+                "timeline_subtitle": "科学规划，分步实施，实现理想未来",
+                
+                "timeline_year_1": "初始阶段",
+                "timeline_title_1": "需求分析与评估",
+                "timeline_desc_1": "深入了解您的背景、目标、优势和挑战，进行全面评估",
+                "timeline_item_1_1": "个人能力评估",
+                "timeline_item_1_2": "资源状况分析",
+                "timeline_item_1_3": "目标设定会议",
+                "timeline_item_1_4": "可行性研究",
+                
+                "timeline_year_2": "1-3个月",
+                "timeline_title_2": "方案设计与定制",
+                "timeline_desc_2": "根据评估结果，设计个性化规划方案",
+                "timeline_item_2_1": "制定分阶段目标",
+                "timeline_item_2_2": "资源整合计划",
+                "timeline_item_2_3": "时间表制定",
+                "timeline_item_2_4": "备选方案准备",
+                
+                "timeline_year_3": "3-6个月",
+                "timeline_title_3": "方案实施与支持",
+                "timeline_desc_3": "执行规划方案，提供全方位支持",
+                "timeline_item_3_1": "资源对接",
+                "timeline_item_3_2": "技能培训",
+                "timeline_item_3_3": "进度跟踪",
+                "timeline_item_3_4": "问题解决",
+                
+                "timeline_year_4": "6-12个月",
+                "timeline_title_4": "中期评估与调整",
+                "timeline_desc_4": "评估实施效果，调整优化方案",
+                "timeline_item_4_1": "成效评估",
+                "timeline_item_4_2": "方案调整",
+                "timeline_item_4_3": "新机会发掘",
+                "timeline_item_4_4": "目标再确认",
+                
+                "timeline_year_5": "长期",
+                "timeline_title_5": "持续发展与优化",
+                "timeline_desc_5": "实现目标，持续优化发展路径",
+                "timeline_item_5_1": "长期跟踪支持",
+                "timeline_item_5_2": "新目标设定",
+                "timeline_item_5_3": "资源网络维护",
+                "timeline_item_5_4": "终身发展指导",
+                
+                // 行动号召区域
+                "cta_title": "规划您的理想未来",
+                "cta_subtitle": "立即预约专业规划师，开启您的未来发展之路",
+                "btn_consult_planner": "咨询规划顾问",
+                "btn_book_service": "预约规划服务",
+                
+                // 页脚
+                "footer_slogan": "让世界感受中国温度，零距离探索中国文化与生活",
+                "footer_quick_links": "快速链接",
+                "footer_services": "服务类别",
+                "footer_contact": "联系我们",
+                "service_entry": "入境对接服务",
+                "service_daily": "日常生活服务",
+                "service_culture": "文化体验活动",
+                "service_study": "学习工作支持",
+                "service_future": "未来规划服务",
+                "contact_address": "中国青岛市崂山区松岭路99号",
+                "contact_hours": "周一至周五: 9:00 - 18:00",
+                "copyright_text": "保留所有权利"
+            }
+        };
+
+        // 当前语言状态 (默认中文)
+        let currentLang = 'zh';
+
+        // 更新页面内容
+        function updatePageContent(lang) {
+            // 更新所有带翻译属性的元素
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // 更新语言切换按钮显示
+            document.querySelector('#languageSwitcher span').textContent = translations[lang].current_language;
+            
+            // 更新页面语言属性
+            document.documentElement.lang = lang === 'en' ? 'en' : 'zh-CN';
+        }
+
         // 语言切换功能
-        document.querySelector('.language-switcher').addEventListener('click', function() {
-            const currentLang = this.querySelector('span').textContent;
-            if(currentLang === 'English') {
-                this.querySelector('span').textContent = '中文';
-                // 实际项目中这里会切换整个页面的语言
-                document.querySelector('.service-hero h1').textContent = 'Future Planning Services';
-                document.querySelector('.service-hero p').textContent = 'Professional guidance for your long-term development in China';
-            } else {
-                this.querySelector('span').textContent = 'English';
-                document.querySelector('.service-hero h1').textContent = '未来规划服务';
-                document.querySelector('.service-hero p').textContent = '为您的长期发展提供专业指导，帮助您实现在中国的生活与职业目标';
+        document.getElementById('languageSwitcher').addEventListener('click', function() {
+            // 切换语言
+            currentLang = currentLang === 'zh' ? 'en' : 'zh';
+            
+            // 更新页面内容
+            updatePageContent(currentLang);
+            
+            // 保存语言选择到本地存储
+            localStorage.setItem('userLanguage', currentLang);
+        });
+
+        // 页面加载时检查本地存储的语言偏好
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('userLanguage');
+            if (savedLang) {
+                currentLang = savedLang;
+                updatePageContent(currentLang);
             }
         });
         

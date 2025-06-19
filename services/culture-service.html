@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>华e通 | 一站式来华服务平台</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/service.css">
     <style>
         :root {
             --primary: #1a56db;
@@ -367,7 +365,19 @@
             font-size: 18px;
             border-radius: 8px;
         }
-                /* 页脚 */
+        
+        .btn-light {
+            background: white;
+            color: var(--primary);
+        }
+        
+        .btn-outline-light {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        /* 页脚 */
         footer {
             background: var(--secondary);
             color: white;
@@ -542,22 +552,22 @@
                 
                 <nav>
                     <ul>
-                        <li><a href="../index.html">首页</a></li>
-                        <li><a href="../index.html#services">服务</a></li>
-                        <li><a href="../index.html#app">APP下载</a></li>
-                        <li><a href="../index.html#about">关于我们</a></li>
-                        <li><a href="../index.html#resources">资源中心</a></li>
-                        <li><a href="../index.html#contact">联系我们</a></li>
+                        <li><a href="../index.html" data-i18n="nav.home">首页</a></li>
+                        <li><a href="../index.html#services" data-i18n="nav.services">服务</a></li>
+                        <li><a href="../index.html#app" data-i18n="nav.app">APP下载</a></li>
+                        <li><a href="../index.html#about" data-i18n="nav.about">关于我们</a></li>
+                        <li><a href="../index.html#resources" data-i18n="nav.resources">资源中心</a></li>
+                        <li><a href="../index.html#contact" data-i18n="nav.contact">联系我们</a></li>
                     </ul>
                 </nav>
                 
                 <div class="header-actions">
                     <div class="language-switcher">
                         <i class="fas fa-globe"></i>
-                        <span>English</span>
+                        <span data-i18n="nav.language">English</span>
                     </div>
-                    <a href="#" class="btn btn-outline">登录</a>
-                    <a href="#" class="btn btn-primary">注册</a>
+                    <a href="#" class="btn btn-outline" data-i18n="nav.login">登录</a>
+                    <a href="#" class="btn btn-primary" data-i18n="nav.register">注册</a>
                 </div>
             </div>
         </div>
@@ -566,11 +576,11 @@
     <!-- 文化体验页面的Hero区域 -->
     <section class="service-hero">
         <div class="container">
-            <h1>文化风光体验</h1>
-            <p>探索中国丰富的文化遗产和壮丽风光，深度体验中华文明的魅力</p>
+            <h1 data-i18n="culture.title">文化风光体验</h1>
+            <p data-i18n="culture.subtitle">探索中国丰富的文化遗产和壮丽风光，深度体验中华文明的魅力</p>
             <div class="hero-actions">
-                <a href="../ai-chat.html" class="btn btn-primary">AI咨询</a>
-                <a href="#events" class="btn btn-outline">查看近期活动</a>
+                <a href="../ai-chat.html" class="btn btn-primary" data-i18n="culture.aiConsult">AI咨询</a>
+                <a href="#events" class="btn btn-outline" data-i18n="culture.viewEvents">查看近期活动</a>
             </div>
         </div>
     </section>
@@ -578,8 +588,8 @@
     <div class="container service-container">
         <!-- 服务功能区域 -->
         <section>
-            <h2 class="section-title">文化体验服务</h2>
-            <p class="section-subtitle">沉浸式体验中国传统文化与现代魅力</p>
+            <h2 class="section-title" data-i18n="culture.features.title">文化体验服务</h2>
+            <p class="section-subtitle" data-i18n="culture.features.subtitle">沉浸式体验中国传统文化与现代魅力</p>
             
             <div class="service-features-grid">
                 <div class="service-feature-card">
@@ -587,13 +597,13 @@
                         <i class="fas fa-paint-brush"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>传统手工艺体验</h3>
-                        <p>亲手体验中国非物质文化遗产的魅力</p>
+                        <h3 data-i18n="culture.features.art.title">传统手工艺体验</h3>
+                        <p data-i18n="culture.features.art.desc">亲手体验中国非物质文化遗产的魅力</p>
                         <ul>
-                            <li>剪纸艺术工作坊</li>
-                            <li>陶瓷制作体验</li>
-                            <li>丝绸刺绣课程</li>
-                            <li>传统漆器工艺</li>
+                            <li data-i18n="culture.features.art.item1">剪纸艺术工作坊</li>
+                            <li data-i18n="culture.features.art.item2">陶瓷制作体验</li>
+                            <li data-i18n="culture.features.art.item3">丝绸刺绣课程</li>
+                            <li data-i18n="culture.features.art.item4">传统漆器工艺</li>
                         </ul>
                     </div>
                 </div>
@@ -603,13 +613,13 @@
                         <i class="fas fa-music"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>传统音乐与戏曲</h3>
-                        <p>感受中国古典艺术的独特魅力</p>
+                        <h3 data-i18n="culture.features.music.title">传统音乐与戏曲</h3>
+                        <p data-i18n="culture.features.music.desc">感受中国古典艺术的独特魅力</p>
                         <ul>
-                            <li>京剧脸谱绘制体验</li>
-                            <li>古筝演奏入门课程</li>
-                            <li>昆曲表演欣赏</li>
-                            <li>民族乐器体验</li>
+                            <li data-i18n="culture.features.music.item1">京剧脸谱绘制体验</li>
+                            <li data-i18n="culture.features.music.item2">古筝演奏入门课程</li>
+                            <li data-i18n="culture.features.music.item3">昆曲表演欣赏</li>
+                            <li data-i18n="culture.features.music.item4">民族乐器体验</li>
                         </ul>
                     </div>
                 </div>
@@ -619,13 +629,13 @@
                         <i class="fas fa-utensils"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>中华美食文化</h3>
-                        <p>品尝并学习制作地道中国美食</p>
+                        <h3 data-i18n="culture.features.food.title">中华美食文化</h3>
+                        <p data-i18n="culture.features.food.desc">品尝并学习制作地道中国美食</p>
                         <ul>
-                            <li>川菜烹饪课程</li>
-                            <li>茶道与品茶体验</li>
-                            <li>传统点心制作</li>
-                            <li>酒文化品鉴</li>
+                            <li data-i18n="culture.features.food.item1">川菜烹饪课程</li>
+                            <li data-i18n="culture.features.food.item2">茶道与品茶体验</li>
+                            <li data-i18n="culture.features.food.item3">传统点心制作</li>
+                            <li data-i18n="culture.features.food.item4">酒文化品鉴</li>
                         </ul>
                     </div>
                 </div>
@@ -635,13 +645,13 @@
                         <i class="fas fa-hiking"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>文化景点游览</h3>
-                        <p>探索中国历史遗迹与自然奇观</p>
+                        <h3 data-i18n="culture.features.travel.title">文化景点游览</h3>
+                        <p data-i18n="culture.features.travel.desc">探索中国历史遗迹与自然奇观</p>
                         <ul>
-                            <li>故宫深度文化游</li>
-                            <li>长城徒步之旅</li>
-                            <li>江南水乡古镇游</li>
-                            <li>少数民族文化探索</li>
+                            <li data-i18n="culture.features.travel.item1">故宫深度文化游</li>
+                            <li data-i18n="culture.features.travel.item2">长城徒步之旅</li>
+                            <li data-i18n="culture.features.travel.item3">江南水乡古镇游</li>
+                            <li data-i18n="culture.features.travel.item4">少数民族文化探索</li>
                         </ul>
                     </div>
                 </div>
@@ -650,97 +660,97 @@
         
         <!-- 服务流程区域 -->
         <section id="process">
-            <h2 class="section-title">文化体验流程</h2>
-            <p class="section-subtitle">四步开启您的中国文化之旅</p>
+            <h2 class="section-title" data-i18n="culture.process.title">文化体验流程</h2>
+            <p class="section-subtitle" data-i18n="culture.process.subtitle">四步开启您的中国文化之旅</p>
             
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-number">1</div>
-                    <h3>文化兴趣评估</h3>
-                    <p>了解您对中国文化的兴趣方向</p>
+                    <h3 data-i18n="culture.process.step1.title">文化兴趣评估</h3>
+                    <p data-i18n="culture.process.step1.desc">了解您对中国文化的兴趣方向</p>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">2</div>
-                    <h3>个性化方案定制</h3>
-                    <p>为您量身打造文化体验计划</p>
+                    <h3 data-i18n="culture.process.step2.title">个性化方案定制</h3>
+                    <p data-i18n="culture.process.step2.desc">为您量身打造文化体验计划</p>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <h3>专业文化导览</h3>
-                    <p>资深文化导师全程陪同讲解</p>
+                    <h3 data-i18n="culture.process.step3.title">专业文化导览</h3>
+                    <p data-i18n="culture.process.step3.desc">资深文化导师全程陪同讲解</p>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">4</div>
-                    <h3>深度体验与互动</h3>
-                    <p>沉浸式参与文化实践活动</p>
+                    <h3 data-i18n="culture.process.step4.title">深度体验与互动</h3>
+                    <p data-i18n="culture.process.step4.desc">沉浸式参与文化实践活动</p>
                 </div>
             </div>
         </section>
         
         <!-- 近期活动区域 -->
         <section id="events" class="event-section">
-            <h2 class="section-title">近期文化活动</h2>
-            <p class="section-subtitle">加入我们的文化体验活动，探索中华文明的精髓</p>
+            <h2 class="section-title" data-i18n="culture.events.title">近期文化活动</h2>
+            <p class="section-subtitle" data-i18n="culture.events.subtitle">加入我们的文化体验活动，探索中华文明的精髓</p>
             
             <div class="event-card">
                 <div class="event-header">
-                    <div class="event-date">6月22日</div>
-                    <div class="event-type">端午节特别活动</div>
+                    <div class="event-date" data-i18n="culture.events.event1.date">6月22日</div>
+                    <div class="event-type" data-i18n="culture.events.event1.type">端午节特别活动</div>
                 </div>
                 <div class="event-content">
-                    <h3>端午节文化体验日</h3>
+                    <h3 data-i18n="culture.events.event1.title">端午节文化体验日</h3>
                     <div class="event-location">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>青岛市文化中心</span>
+                        <span data-i18n="culture.events.event1.location">青岛市文化中心</span>
                     </div>
-                    <p>体验包粽子、制作香囊、龙舟模型制作等端午节传统活动，了解屈原故事和端午节的文化内涵。</p>
-                    <a href="#" class="btn btn-primary">立即报名</a>
+                    <p data-i18n="culture.events.event1.desc">体验包粽子、制作香囊、龙舟模型制作等端午节传统活动，了解屈原故事和端午节的文化内涵。</p>
+                    <a href="#" class="btn btn-primary" data-i18n="culture.events.register">立即报名</a>
                 </div>
             </div>
             
             <div class="event-card">
                 <div class="event-header">
-                    <div class="event-date">7月8日</div>
-                    <div class="event-type">传统艺术工作坊</div>
+                    <div class="event-date" data-i18n="culture.events.event2.date">7月8日</div>
+                    <div class="event-type" data-i18n="culture.events.event2.type">传统艺术工作坊</div>
                 </div>
                 <div class="event-content">
-                    <h3>中国书法工作坊 - 楷书入门</h3>
+                    <h3 data-i18n="culture.events.event2.title">中国书法工作坊 - 楷书入门</h3>
                     <div class="event-location">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>青岛大学艺术学院</span>
+                        <span data-i18n="culture.events.event2.location">青岛大学艺术学院</span>
                     </div>
-                    <p>由著名书法家张教授亲自指导，学习楷书基本笔画和结构，了解中国书法的历史与美学。</p>
-                    <a href="#" class="btn btn-primary">立即报名</a>
+                    <p data-i18n="culture.events.event2.desc">由著名书法家张教授亲自指导，学习楷书基本笔画和结构，了解中国书法的历史与美学。</p>
+                    <a href="#" class="btn btn-primary" data-i18n="culture.events.register">立即报名</a>
                 </div>
             </div>
             
             <div class="event-card">
                 <div class="event-header">
-                    <div class="event-date">7月15日</div>
-                    <div class="event-type">茶文化体验</div>
+                    <div class="event-date" data-i18n="culture.events.event3.date">7月15日</div>
+                    <div class="event-type" data-i18n="culture.events.event3.type">茶文化体验</div>
                 </div>
                 <div class="event-content">
-                    <h3>中国传统茶道体验活动</h3>
+                    <h3 data-i18n="culture.events.event3.title">中国传统茶道体验活动</h3>
                     <div class="event-location">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>青岛市茶文化博物馆</span>
+                        <span data-i18n="culture.events.event3.location">青岛市茶文化博物馆</span>
                     </div>
-                    <p>学习中国茶道礼仪，品尝不同种类的中国茶，了解茶文化的历史和养生功效。</p>
-                    <a href="#" class="btn btn-primary">立即报名</a>
+                    <p data-i18n="culture.events.event3.desc">学习中国茶道礼仪，品尝不同种类的中国茶，了解茶文化的历史和养生功效。</p>
+                    <a href="#" class="btn btn-primary" data-i18n="culture.events.register">立即报名</a>
                 </div>
             </div>
         </section>
         
         <!-- 行动号召区域 -->
         <section class="service-cta-section">
-            <h2>开启您的中国文化探索之旅</h2>
-            <p>立即预约文化体验活动，感受五千年文明的独特魅力</p>
+            <h2 data-i18n="culture.cta.title">开启您的中国文化探索之旅</h2>
+            <p data-i18n="culture.cta.subtitle">立即预约文化体验活动，感受五千年文明的独特魅力</p>
             <div class="cta-buttons">
-                <a href="../ai-chat.html" class="btn btn-light btn-large">咨询文化顾问</a>
-                <a href="#" class="btn btn-outline-light btn-large">查看活动日历</a>
+                <a href="../ai-chat.html" class="btn btn-light btn-large" data-i18n="culture.cta.btn1">咨询文化顾问</a>
+                <a href="#" class="btn btn-outline-light btn-large" data-i18n="culture.cta.btn2">查看活动日历</a>
             </div>
         </section>
     </div>
@@ -751,7 +761,7 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="logo-text" style="color: white; font-size: 28px; margin-bottom: 20px;">China<span style="color: #f87171;">Easy</span></div>
-                    <p>让世界感受中国温度，零距离探索中国文化与生活。</p>
+                    <p data-i18n="footer.slogan">让世界感受中国温度，零距离探索中国文化与生活。</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-weixin"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -761,33 +771,33 @@
                 </div>
                 
                 <div class="footer-col">
-                    <h3>快速链接</h3>
+                    <h3 data-i18n="footer.quickLinks">快速链接</h3>
                     <ul class="footer-links">
-                        <li><a href="../index.html">首页</a></li>
-                        <li><a href="../index.html#services">服务项目</a></li>
-                        <li><a href="../index.html#app">APP下载</a></li>
-                        <li><a href="../index.html#resources">资源中心</a></li>
-                        <li><a href="../index.html#about">关于我们</a></li>
+                        <li><a href="../index.html" data-i18n="nav.home">首页</a></li>
+                        <li><a href="../index.html#services" data-i18n="nav.services">服务项目</a></li>
+                        <li><a href="../index.html#app" data-i18n="nav.app">APP下载</a></li>
+                        <li><a href="../index.html#resources" data-i18n="nav.resources">资源中心</a></li>
+                        <li><a href="../index.html#about" data-i18n="nav.about">关于我们</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3>服务类别</h3>
+                    <h3 data-i18n="footer.services">服务类别</h3>
                     <ul class="footer-links">
-                        <li><a href="entry-service.html">入境对接服务</a></li>
-                        <li><a href="daily-service.html">日常生活服务</a></li>
-                        <li><a href="culture-service.html">文化体验活动</a></li>
-                        <li><a href="study-service.html">学习工作支持</a></li>
-                        <li><a href="future-service.html">未来规划服务</a></li>
+                        <li><a href="entry-service.html" data-i18n="footer.service1">入境对接服务</a></li>
+                        <li><a href="daily-service.html" data-i18n="footer.service2">日常生活服务</a></li>
+                        <li><a href="culture-service.html" data-i18n="footer.service3">文化体验活动</a></li>
+                        <li><a href="study-service.html" data-i18n="footer.service4">学习工作支持</a></li>
+                        <li><a href="future-service.html" data-i18n="footer.service5">未来规划服务</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3>联系我们</h3>
+                    <h3 data-i18n="footer.contact">联系我们</h3>
                     <ul class="footer-contact">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>中国青岛市崂山区松岭路99号</span>
+                            <span data-i18n="footer.address">中国青岛市崂山区松岭路99号</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
@@ -799,34 +809,242 @@
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
-                            <span>周一至周五: 9:00 - 18:00</span>
+                            <span data-i18n="footer.hours">周一至周五: 9:00 - 18:00</span>
                         </li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 华易国际服务有限公司. 保留所有权利. | 鲁ICP备12345678号</p>
+                <p>&copy; <span data-i18n="footer.copyright">2023 华易国际服务有限公司. 保留所有权利.</span> | <span data-i18n="footer.icp">鲁ICP备12345678号</span></p>
             </div>
         </div>
     </footer>
 
     <script>
+        // 翻译字典 - 包含所有文本的翻译
+        const translations = {
+            zh: {
+                "nav.home": "首页",
+                "nav.services": "服务",
+                "nav.app": "APP下载",
+                "nav.about": "关于我们",
+                "nav.resources": "资源中心",
+                "nav.contact": "联系我们",
+                "nav.language": "English",
+                "nav.login": "登录",
+                "nav.register": "注册",
+                
+                "culture.title": "文化风光体验",
+                "culture.subtitle": "探索中国丰富的文化遗产和壮丽风光，深度体验中华文明的魅力",
+                "culture.aiConsult": "AI咨询",
+                "culture.viewEvents": "查看近期活动",
+                
+                "culture.features.title": "文化体验服务",
+                "culture.features.subtitle": "沉浸式体验中国传统文化与现代魅力",
+                "culture.features.art.title": "传统手工艺体验",
+                "culture.features.art.desc": "亲手体验中国非物质文化遗产的魅力",
+                "culture.features.art.item1": "剪纸艺术工作坊",
+                "culture.features.art.item2": "陶瓷制作体验",
+                "culture.features.art.item3": "丝绸刺绣课程",
+                "culture.features.art.item4": "传统漆器工艺",
+                "culture.features.music.title": "传统音乐与戏曲",
+                "culture.features.music.desc": "感受中国古典艺术的独特魅力",
+                "culture.features.music.item1": "京剧脸谱绘制体验",
+                "culture.features.music.item2": "古筝演奏入门课程",
+                "culture.features.music.item3": "昆曲表演欣赏",
+                "culture.features.music.item4": "民族乐器体验",
+                "culture.features.food.title": "中华美食文化",
+                "culture.features.food.desc": "品尝并学习制作地道中国美食",
+                "culture.features.food.item1": "川菜烹饪课程",
+                "culture.features.food.item2": "茶道与品茶体验",
+                "culture.features.food.item3": "传统点心制作",
+                "culture.features.food.item4": "酒文化品鉴",
+                "culture.features.travel.title": "文化景点游览",
+                "culture.features.travel.desc": "探索中国历史遗迹与自然奇观",
+                "culture.features.travel.item1": "故宫深度文化游",
+                "culture.features.travel.item2": "长城徒步之旅",
+                "culture.features.travel.item3": "江南水乡古镇游",
+                "culture.features.travel.item4": "少数民族文化探索",
+                
+                "culture.process.title": "文化体验流程",
+                "culture.process.subtitle": "四步开启您的中国文化之旅",
+                "culture.process.step1.title": "文化兴趣评估",
+                "culture.process.step1.desc": "了解您对中国文化的兴趣方向",
+                "culture.process.step2.title": "个性化方案定制",
+                "culture.process.step2.desc": "为您量身打造文化体验计划",
+                "culture.process.step3.title": "专业文化导览",
+                "culture.process.step3.desc": "资深文化导师全程陪同讲解",
+                "culture.process.step4.title": "深度体验与互动",
+                "culture.process.step4.desc": "沉浸式参与文化实践活动",
+                
+                "culture.events.title": "近期文化活动",
+                "culture.events.subtitle": "加入我们的文化体验活动，探索中华文明的精髓",
+                "culture.events.event1.date": "6月22日",
+                "culture.events.event1.type": "端午节特别活动",
+                "culture.events.event1.title": "端午节文化体验日",
+                "culture.events.event1.location": "青岛市文化中心",
+                "culture.events.event1.desc": "体验包粽子、制作香囊、龙舟模型制作等端午节传统活动，了解屈原故事和端午节的文化内涵。",
+                "culture.events.event2.date": "7月8日",
+                "culture.events.event2.type": "传统艺术工作坊",
+                "culture.events.event2.title": "中国书法工作坊 - 楷书入门",
+                "culture.events.event2.location": "青岛大学艺术学院",
+                "culture.events.event2.desc": "由著名书法家张教授亲自指导，学习楷书基本笔画和结构，了解中国书法的历史与美学。",
+                "culture.events.event3.date": "7月15日",
+                "culture.events.event3.type": "茶文化体验",
+                "culture.events.event3.title": "中国传统茶道体验活动",
+                "culture.events.event3.location": "青岛市茶文化博物馆",
+                "culture.events.event3.desc": "学习中国茶道礼仪，品尝不同种类的中国茶，了解茶文化的历史和养生功效。",
+                "culture.events.register": "立即报名",
+                
+                "culture.cta.title": "开启您的中国文化探索之旅",
+                "culture.cta.subtitle": "立即预约文化体验活动，感受五千年文明的独特魅力",
+                "culture.cta.btn1": "咨询文化顾问",
+                "culture.cta.btn2": "查看活动日历",
+                
+                "footer.slogan": "让世界感受中国温度，零距离探索中国文化与生活。",
+                "footer.quickLinks": "快速链接",
+                "footer.services": "服务类别",
+                "footer.service1": "入境对接服务",
+                "footer.service2": "日常生活服务",
+                "footer.service3": "文化体验活动",
+                "footer.service4": "学习工作支持",
+                "footer.service5": "未来规划服务",
+                "footer.contact": "联系我们",
+                "footer.address": "中国青岛市崂山区松岭路99号",
+                "footer.hours": "周一至周五: 9:00 - 18:00",
+                "footer.copyright": "2023 华易国际服务有限公司. 保留所有权利.",
+                "footer.icp": "鲁ICP备12345678号"
+            },
+            en: {
+                "nav.home": "Home",
+                "nav.services": "Services",
+                "nav.app": "Download App",
+                "nav.about": "About Us",
+                "nav.resources": "Resources",
+                "nav.contact": "Contact",
+                "nav.language": "中文",
+                "nav.login": "Login",
+                "nav.register": "Register",
+                
+                "culture.title": "Cultural Experience",
+                "culture.subtitle": "Explore China's rich cultural heritage and magnificent scenery, deeply experience the charm of Chinese civilization",
+                "culture.aiConsult": "AI Consultation",
+                "culture.viewEvents": "View Upcoming Events",
+                
+                "culture.features.title": "Cultural Experience Services",
+                "culture.features.subtitle": "Immersive experience of traditional Chinese culture and modern charm",
+                "culture.features.art.title": "Traditional Handicrafts",
+                "culture.features.art.desc": "Hands-on experience of Chinese intangible cultural heritage",
+                "culture.features.art.item1": "Paper Cutting Workshop",
+                "culture.features.art.item2": "Ceramic Making Experience",
+                "culture.features.art.item3": "Silk Embroidery Course",
+                "culture.features.art.item4": "Traditional Lacquerware Craft",
+                "culture.features.music.title": "Traditional Music & Opera",
+                "culture.features.music.desc": "Feel the unique charm of Chinese classical art",
+                "culture.features.music.item1": "Peking Opera Mask Painting",
+                "culture.features.music.item2": "Guzheng Beginner Course",
+                "culture.features.music.item3": "Kunqu Opera Performance",
+                "culture.features.music.item4": "Traditional Instrument Experience",
+                "culture.features.food.title": "Chinese Culinary Culture",
+                "culture.features.food.desc": "Taste and learn to make authentic Chinese cuisine",
+                "culture.features.food.item1": "Sichuan Cooking Class",
+                "culture.features.food.item2": "Tea Ceremony Experience",
+                "culture.features.food.item3": "Traditional Dim Sum Making",
+                "culture.features.food.item4": "Wine Culture Tasting",
+                "culture.features.travel.title": "Cultural Attractions",
+                "culture.features.travel.desc": "Explore Chinese historical sites and natural wonders",
+                "culture.features.travel.item1": "Forbidden City Cultural Tour",
+                "culture.features.travel.item2": "Great Wall Hiking Tour",
+                "culture.features.travel.item3": "Jiangnan Water Town Tour",
+                "culture.features.travel.item4": "Ethnic Minority Culture Exploration",
+                
+                "culture.process.title": "Cultural Experience Process",
+                "culture.process.subtitle": "Four steps to start your Chinese cultural journey",
+                "culture.process.step1.title": "Cultural Interest Assessment",
+                "culture.process.step1.desc": "Understand your interests in Chinese culture",
+                "culture.process.step2.title": "Personalized Plan Customization",
+                "culture.process.step2.desc": "Tailor-made cultural experience plan for you",
+                "culture.process.step3.title": "Professional Cultural Guide",
+                "culture.process.step3.desc": "Experienced cultural guide with full explanation",
+                "culture.process.step4.title": "Deep Experience & Interaction",
+                "culture.process.step4.desc": "Immersive participation in cultural activities",
+                
+                "culture.events.title": "Upcoming Cultural Events",
+                "culture.events.subtitle": "Join our cultural experience events to explore the essence of Chinese civilization",
+                "culture.events.event1.date": "June 22",
+                "culture.events.event1.type": "Dragon Boat Festival Special",
+                "culture.events.event1.title": "Dragon Boat Festival Cultural Experience",
+                "culture.events.event1.location": "Qingdao Cultural Center",
+                "culture.events.event1.desc": "Experience traditional activities like making zongzi, crafting sachets, and dragon boat model making. Learn about the story of Qu Yuan and cultural significance.",
+                "culture.events.event2.date": "July 8",
+                "culture.events.event2.type": "Traditional Art Workshop",
+                "culture.events.event2.title": "Chinese Calligraphy Workshop - Regular Script",
+                "culture.events.event2.location": "Qingdao University Art School",
+                "culture.events.event2.desc": "Instructed by renowned calligrapher Professor Zhang. Learn basic strokes and structure of regular script, understand history and aesthetics of Chinese calligraphy.",
+                "culture.events.event3.date": "July 15",
+                "culture.events.event3.type": "Tea Culture Experience",
+                "culture.events.event3.title": "Traditional Chinese Tea Ceremony",
+                "culture.events.event3.location": "Qingdao Tea Culture Museum",
+                "culture.events.event3.desc": "Learn Chinese tea ceremony etiquette, taste different types of Chinese tea, understand the history and health benefits of tea culture.",
+                "culture.events.register": "Register Now",
+                
+                "culture.cta.title": "Start Your Chinese Cultural Journey",
+                "culture.cta.subtitle": "Book cultural experiences now to feel the unique charm of 5000 years of civilization",
+                "culture.cta.btn1": "Consult Cultural Advisor",
+                "culture.cta.btn2": "View Event Calendar",
+                
+                "footer.slogan": "Let the world feel the warmth of China, explore Chinese culture and life up close.",
+                "footer.quickLinks": "Quick Links",
+                "footer.services": "Service Categories",
+                "footer.service1": "Entry Services",
+                "footer.service2": "Daily Life Services",
+                "footer.service3": "Cultural Experiences",
+                "footer.service4": "Study & Work Support",
+                "footer.service5": "Future Planning",
+                "footer.contact": "Contact Us",
+                "footer.address": "No.99 Songling Road, Laoshan District, Qingdao",
+                "footer.hours": "Monday-Friday: 9:00 AM - 6:00 PM",
+                "footer.copyright": "© 2023 HuaE International Service Co., Ltd. All rights reserved.",
+                "footer.icp": "ICP No.12345678"
+            }
+        };
+
+        // 当前语言状态
+        let currentLang = 'zh';
+
+        // 翻译函数
+        function translatePage(lang) {
+            // 更新当前语言
+            currentLang = lang;
+            
+            // 更新语言切换按钮文本
+            document.querySelector('[data-i18n="nav.language"]').textContent = 
+                lang === 'zh' ? 'English' : '中文';
+            
+            // 更新所有带翻译键的元素
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    // 处理按钮文本和普通文本
+                    if (element.tagName === 'A' || element.tagName === 'BUTTON') {
+                        element.textContent = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+            
+            // 更新页面语言属性
+            document.documentElement.lang = lang;
+        }
+
         // 语言切换功能
         document.querySelector('.language-switcher').addEventListener('click', function() {
-            const currentLang = this.querySelector('span').textContent;
-            if(currentLang === 'English') {
-                this.querySelector('span').textContent = '中文';
-                // 实际项目中这里会切换整个页面的语言
-                document.querySelector('.service-hero h1').textContent = 'Cultural Experience';
-                document.querySelector('.service-hero p').textContent = 'Explore China\'s rich cultural heritage and magnificent scenery';
-            } else {
-                this.querySelector('span').textContent = 'English';
-                document.querySelector('.service-hero h1').textContent = '文化风光体验';
-                document.querySelector('.service-hero p').textContent = '探索中国丰富的文化遗产和壮丽风光，深度体验中华文明的魅力';
-            }
+            const newLang = currentLang === 'zh' ? 'en' : 'zh';
+            translatePage(newLang);
         });
-        
+
         // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -840,6 +1058,9 @@
                 }
             });
         });
+
+        // 初始化页面 - 确保使用当前语言
+        translatePage(currentLang);
     </script>
 </body>
 </html>

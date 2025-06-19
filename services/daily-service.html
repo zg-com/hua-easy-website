@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>华e通 | 一站式来华服务平台</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/service.css">
     <style>
         :root {
             --primary: #1a56db;
@@ -158,18 +156,8 @@
             background: rgba(26, 86, 219, 0.1);
         }
         /* 日常生活服务页面特有样式 */
-        :root {
-            --primary: #1a56db;
-            --secondary: #0e2a5c;
-            --accent: #e53e3e;
-            --light: #f8fafc;
-            --dark: #1e293b;
-            --gray: #64748b;
-            --transition: all 0.3s ease;
-        }
-        
         .service-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/daily-life-bg.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
             color: white;
             padding: 150px 0;
             text-align: center;
@@ -399,48 +387,7 @@
             background: rgba(255,255,255,0.1);
         }
         
-        @media (max-width: 992px) {
-            .process-step {
-                flex: 0 0 calc(50% - 20px);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .service-hero {
-                padding: 100px 0;
-            }
-            
-            .service-hero h1 {
-                font-size: 32px;
-            }
-            
-            .service-hero p {
-                font-size: 18px;
-            }
-            
-            .process-step {
-                flex: 0 0 100%;
-            }
-            
-            .testimonial-section {
-                padding: 30px;
-            }
-            
-            .service-cta-section {
-                padding: 50px 20px;
-            }
-            
-            .cta-buttons {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .btn-large {
-                margin: 5px 0;
-            }
-        }
-            /* 页脚 */
+        /* 页脚 */
         footer {
             background: var(--secondary);
             color: white;
@@ -541,6 +488,10 @@
             nav ul {
                 gap: 15px;
             }
+            
+            .process-step {
+                flex: 0 0 calc(50% - 20px);
+            }
         }
         
         @media (max-width: 768px) {
@@ -549,11 +500,15 @@
                 gap: 20px;
             }
             
-            .hero h1 {
+            .service-hero {
+                padding: 100px 0;
+            }
+            
+            .service-hero h1 {
                 font-size: 32px;
             }
             
-            .hero p {
+            .service-hero p {
                 font-size: 18px;
             }
             
@@ -573,39 +528,33 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
-        }
-        
-        @media (max-width: 992px) {
-            .process-step {
-                flex: 0 0 calc(50% - 20px);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .service-hero {
-                padding: 100px 0;
-            }
-            
-            .service-hero h1 {
-                font-size: 32px;
-            }
-            
-            .service-hero p {
-                font-size: 18px;
-            }
             
             .process-step {
                 flex: 0 0 100%;
             }
             
-            .event-section {
+            .testimonial-section {
                 padding: 30px;
+            }
+            
+            .service-cta-section {
+                padding: 50px 20px;
+            }
+            
+            .cta-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn-large {
+                margin: 5px 0;
             }
         }
     </style>
 </head>
 <body>
-    <!-- 头部导航 - 与主页完全一致 -->
+    <!-- 头部导航 -->
     <header>
         <div class="container">
             <div class="header-inner">
@@ -615,39 +564,35 @@
                 
                 <nav>
                     <ul>
-                        <li><a href="../index.html">首页</a></li>
-                        <li><a href="../index.html#services">服务</a></li>
-                        <li><a href="../index.html#app">APP下载</a></li>
-                        <li><a href="../index.html#about">关于我们</a></li>
-                        <li><a href="../index.html#resources">资源中心</a></li>
-                        <li><a href="../index.html#contact">联系我们</a></li>
+                        <li><a href="../index.html" data-translate="home">首页</a></li>
+                        <li><a href="../index.html#services" data-translate="services">服务</a></li>
+                        <li><a href="../index.html#app" data-translate="app">APP下载</a></li>
+                        <li><a href="../index.html#about" data-translate="about">关于我们</a></li>
+                        <li><a href="../index.html#resources" data-translate="resources">资源中心</a></li>
+                        <li><a href="../index.html#contact" data-translate="contact">联系我们</a></li>
                     </ul>
                 </nav>
                 
                 <div class="header-actions">
                     <div class="language-switcher">
                         <i class="fas fa-globe"></i>
-                        <span>English</span>
+                        <span data-translate="currentLang">中文</span>
                     </div>
-                    <a href="#" class="btn btn-outline">登录</a>
-                    <a href="#" class="btn btn-primary">注册</a>
+                    <a href="#" class="btn btn-outline" data-translate="login">登录</a>
+                    <a href="#" class="btn btn-primary" data-translate="register">注册</a>
                 </div>
             </div>
         </div>
     </header>
-    </style>
-</head>
-<body>
-   
 
     <!-- 日常生活服务页面的Hero区域 -->
     <section class="service-hero">
         <div class="container">
-            <h1>日常生活服务</h1>
-            <p>为您解决在中国生活的各种日常需求，让您的生活更便捷、更舒适</p>
+            <h1 data-translate="dailyLifeServiceTitle">日常生活服务</h1>
+            <p data-translate="dailyLifeServiceDesc">为您解决在中国生活的各种日常需求，让您的生活更便捷、更舒适</p>
             <div class="hero-actions">
-                <a href="../ai-chat.html" class="btn btn-primary">AI咨询</a>
-                <a href="#process" class="btn btn-outline">了解服务流程</a>
+                <a href="../ai-chat.html" class="btn btn-primary" data-translate="aiConsult">AI咨询</a>
+                <a href="#process" class="btn btn-outline" data-translate="learnProcess">了解服务流程</a>
             </div>
         </div>
     </section>
@@ -655,8 +600,8 @@
     <div class="container service-container">
         <!-- 服务功能区域 -->
         <section>
-            <h2 class="section-title">日常生活服务内容</h2>
-            <p class="section-subtitle">全方位解决您在中国生活的各种需求</p>
+            <h2 class="section-title" data-translate="serviceContentTitle">日常生活服务内容</h2>
+            <p class="section-subtitle" data-translate="serviceContentDesc">全方位解决您在中国生活的各种需求</p>
             
             <div class="service-features-grid">
                 <div class="service-feature-card">
@@ -664,14 +609,14 @@
                         <i class="fas fa-home"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>住宿安排</h3>
-                        <p>为您找到理想的居住环境</p>
+                        <h3 data-translate="accommodation">住宿安排</h3>
+                        <p data-translate="accommodationDesc">为您找到理想的居住环境</p>
                         <ul>
-                            <li>长期/短期公寓租赁</li>
-                            <li>宿舍申请与安排</li>
-                            <li>酒店预订服务</li>
-                            <li>房屋清洁与维护</li>
-                            <li>搬家协助服务</li>
+                            <li data-translate="accommodationItem1">长期/短期公寓租赁</li>
+                            <li data-translate="accommodationItem2">宿舍申请与安排</li>
+                            <li data-translate="accommodationItem3">酒店预订服务</li>
+                            <li data-translate="accommodationItem4">房屋清洁与维护</li>
+                            <li data-translate="accommodationItem5">搬家协助服务</li>
                         </ul>
                     </div>
                 </div>
@@ -681,14 +626,14 @@
                         <i class="fas fa-utensils"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>餐饮服务</h3>
-                        <p>解决您的饮食需求</p>
+                        <h3 data-translate="dining">餐饮服务</h3>
+                        <p data-translate="diningDesc">解决您的饮食需求</p>
                         <ul>
-                            <li>本地餐厅推荐</li>
-                            <li>外卖平台指导</li>
-                            <li>食材采购指导</li>
-                            <li>特色美食体验</li>
-                            <li>饮食健康咨询</li>
+                            <li data-translate="diningItem1">本地餐厅推荐</li>
+                            <li data-translate="diningItem2">外卖平台指导</li>
+                            <li data-translate="diningItem3">食材采购指导</li>
+                            <li data-translate="diningItem4">特色美食体验</li>
+                            <li data-translate="diningItem5">饮食健康咨询</li>
                         </ul>
                     </div>
                 </div>
@@ -698,14 +643,14 @@
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>购物指南</h3>
-                        <p>让购物更便捷、更实惠</p>
+                        <h3 data-translate="shopping">购物指南</h3>
+                        <p data-translate="shoppingDesc">让购物更便捷、更实惠</p>
                         <ul>
-                            <li>超市购物指导</li>
-                            <li>线上购物平台使用</li>
-                            <li>特色商品推荐</li>
-                            <li>比价与优惠信息</li>
-                            <li>退换货协助</li>
+                            <li data-translate="shoppingItem1">超市购物指导</li>
+                            <li data-translate="shoppingItem2">线上购物平台使用</li>
+                            <li data-translate="shoppingItem3">特色商品推荐</li>
+                            <li data-translate="shoppingItem4">比价与优惠信息</li>
+                            <li data-translate="shoppingItem5">退换货协助</li>
                         </ul>
                     </div>
                 </div>
@@ -715,14 +660,14 @@
                         <i class="fas fa-file-invoice"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>缴费服务</h3>
-                        <p>轻松处理各类生活账单</p>
+                        <h3 data-translate="payment">缴费服务</h3>
+                        <p data-translate="paymentDesc">轻松处理各类生活账单</p>
                         <ul>
-                            <li>水电燃气费缴纳</li>
-                            <li>网络与电话费支付</li>
-                            <li>物业费缴纳指导</li>
-                            <li>账单翻译与解释</li>
-                            <li>自动缴费设置</li>
+                            <li data-translate="paymentItem1">水电燃气费缴纳</li>
+                            <li data-translate="paymentItem2">网络与电话费支付</li>
+                            <li data-translate="paymentItem3">物业费缴纳指导</li>
+                            <li data-translate="paymentItem4">账单翻译与解释</li>
+                            <li data-translate="paymentItem5">自动缴费设置</li>
                         </ul>
                     </div>
                 </div>
@@ -732,14 +677,14 @@
                         <i class="fas fa-id-card"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>证件办理</h3>
-                        <p>协助办理各类必要证件</p>
+                        <h3 data-translate="documents">证件办理</h3>
+                        <p data-translate="documentsDesc">协助办理各类必要证件</p>
                         <ul>
-                            <li>居留许可办理</li>
-                            <li>银行卡开户</li>
-                            <li>手机卡办理</li>
-                            <li>交通卡办理</li>
-                            <li>各类证件更新</li>
+                            <li data-translate="documentsItem1">居留许可办理</li>
+                            <li data-translate="documentsItem2">银行卡开户</li>
+                            <li data-translate="documentsItem3">手机卡办理</li>
+                            <li data-translate="documentsItem4">交通卡办理</li>
+                            <li data-translate="documentsItem5">各类证件更新</li>
                         </ul>
                     </div>
                 </div>
@@ -749,14 +694,14 @@
                         <i class="fas fa-heartbeat"></i>
                     </div>
                     <div class="feature-content">
-                        <h3>医疗健康</h3>
-                        <p>保障您的健康与安全</p>
+                        <h3 data-translate="health">医疗健康</h3>
+                        <p data-translate="healthDesc">保障您的健康与安全</p>
                         <ul>
-                            <li>医院预约服务</li>
-                            <li>医疗保险咨询</li>
-                            <li>药品购买指导</li>
-                            <li>紧急医疗服务</li>
-                            <li>健康检查安排</li>
+                            <li data-translate="healthItem1">医院预约服务</li>
+                            <li data-translate="healthItem2">医疗保险咨询</li>
+                            <li data-translate="healthItem3">药品购买指导</li>
+                            <li data-translate="healthItem4">紧急医疗服务</li>
+                            <li data-translate="healthItem5">健康检查安排</li>
                         </ul>
                     </div>
                 </div>
@@ -765,40 +710,40 @@
         
         <!-- 服务流程区域 -->
         <section id="process">
-            <h2 class="section-title">服务流程</h2>
-            <p class="section-subtitle">简单四步，轻松享受便捷生活服务</p>
+            <h2 class="section-title" data-translate="processTitle">服务流程</h2>
+            <p class="section-subtitle" data-translate="processDesc">简单四步，轻松享受便捷生活服务</p>
             
             <div class="process-steps">
                 <div class="process-step">
                     <div class="step-number">1</div>
-                    <h3>需求沟通</h3>
-                    <p>详细了解您的日常生活需求</p>
+                    <h3 data-translate="step1Title">需求沟通</h3>
+                    <p data-translate="step1Desc">详细了解您的日常生活需求</p>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">2</div>
-                    <h3>方案定制</h3>
-                    <p>为您量身定制生活解决方案</p>
+                    <h3 data-translate="step2Title">方案定制</h3>
+                    <p data-translate="step2Desc">为您量身定制生活解决方案</p>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">3</div>
-                    <h3>服务实施</h3>
-                    <p>专业团队高效执行服务方案</p>
+                    <h3 data-translate="step3Title">服务实施</h3>
+                    <p data-translate="step3Desc">专业团队高效执行服务方案</p>
                 </div>
                 
                 <div class="process-step">
                     <div class="step-number">4</div>
-                    <h3>持续支持</h3>
-                    <p>提供后续支持与问题解决</p>
+                    <h3 data-translate="step4Title">持续支持</h3>
+                    <p data-translate="step4Desc">提供后续支持与问题解决</p>
                 </div>
             </div>
         </section>
         
         <!-- 用户评价区域 -->
         <section class="testimonial-section">
-            <h2 class="section-title">用户评价</h2>
-            <p class="section-subtitle">听听用户对我们服务的真实反馈</p>
+            <h2 class="section-title" data-translate="testimonialsTitle">用户评价</h2>
+            <p class="section-subtitle" data-translate="testimonialsDesc">听听用户对我们服务的真实反馈</p>
             
             <div class="testimonial-card">
                 <div class="testimonial-header">
@@ -807,7 +752,7 @@
                     </div>
                     <div class="testimonial-info">
                         <h4>詹姆斯·威尔逊</h4>
-                        <p>来自美国，在青岛工作</p>
+                        <p data-translate="testimonial1Location">来自美国，在青岛工作</p>
                     </div>
                 </div>
                 <div class="testimonial-rating">
@@ -817,7 +762,7 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p>"华e通的日常生活服务让我在中国的生活变得无比轻松。从找到理想的公寓到设置水电缴费，每一步都有专业指导。特别感谢他们的医疗协助服务，在我生病时帮我预约了会说英语的医生，解决了大问题。"</p>
+                <p data-translate="testimonial1Content">"华e通的日常生活服务让我在中国的生活变得无比轻松。从找到理想的公寓到设置水电缴费，每一步都有专业指导。特别感谢他们的医疗协助服务，在我生病时帮我预约了会说英语的医生，解决了大问题。"</p>
             </div>
             
             <div class="testimonial-card">
@@ -827,7 +772,7 @@
                     </div>
                     <div class="testimonial-info">
                         <h4>索菲亚·罗西</h4>
-                        <p>来自意大利，在青岛留学</p>
+                        <p data-translate="testimonial2Location">来自意大利，在青岛留学</p>
                     </div>
                 </div>
                 <div class="testimonial-rating">
@@ -837,28 +782,28 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p>"作为一名留学生，刚到中国时面对各种生活事务感到手足无措。华e通的日常生活服务帮我解决了所有问题：从办理手机卡、银行卡，到熟悉本地超市和外卖APP。他们的服务人员非常耐心，还会定期跟进询问是否有新需求。"</p>
+                <p data-translate="testimonial2Content">"作为一名留学生，刚到中国时面对各种生活事务感到手足无措。华e通的日常生活服务帮我解决了所有问题：从办理手机卡、银行卡，到熟悉本地超市和外卖APP。他们的服务人员非常耐心，还会定期跟进询问是否有新需求。"</p>
             </div>
         </section>
         
         <!-- 行动号召区域 -->
         <section class="service-cta-section">
-            <h2>开启您的便捷中国生活体验</h2>
-            <p>立即预约服务，让日常生活更轻松、更舒适</p>
+            <h2 data-translate="ctaTitle">开启您的便捷中国生活体验</h2>
+            <p data-translate="ctaDesc">立即预约服务，让日常生活更轻松、更舒适</p>
             <div class="cta-buttons">
-                <a href="../ai-chat.html" class="btn btn-light btn-large">咨询生活顾问</a>
-                <a href="#" class="btn btn-outline-light btn-large">在线预约服务</a>
+                <a href="../ai-chat.html" class="btn btn-light btn-large" data-translate="consultAdvisor">咨询生活顾问</a>
+                <a href="#" class="btn btn-outline-light btn-large" data-translate="bookService">在线预约服务</a>
             </div>
         </section>
     </div>
 
-    <!-- 页脚 - 与主页完全一致 -->
+    <!-- 页脚 -->
     <footer id="contact">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="logo-text" style="color: white; font-size: 28px; margin-bottom: 20px;">China<span style="color: #f87171;">Easy</span></div>
-                    <p>让世界感受中国温度，零距离探索中国文化与生活。</p>
+                    <p data-translate="footerSlogan">让世界感受中国温度，零距离探索中国文化与生活。</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-weixin"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -868,33 +813,33 @@
                 </div>
                 
                 <div class="footer-col">
-                    <h3>快速链接</h3>
+                    <h3 data-translate="quickLinks">快速链接</h3>
                     <ul class="footer-links">
-                        <li><a href="../index.html">首页</a></li>
-                        <li><a href="../index.html#services">服务项目</a></li>
-                        <li><a href="../index.html#app">APP下载</a></li>
-                        <li><a href="../index.html#resources">资源中心</a></li>
-                        <li><a href="../index.html#about">关于我们</a></li>
+                        <li><a href="../index.html" data-translate="footerHome">首页</a></li>
+                        <li><a href="../index.html#services" data-translate="footerServices">服务项目</a></li>
+                        <li><a href="../index.html#app" data-translate="footerApp">APP下载</a></li>
+                        <li><a href="../index.html#resources" data-translate="footerResources">资源中心</a></li>
+                        <li><a href="../index.html#about" data-translate="footerAbout">关于我们</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3>服务类别</h3>
+                    <h3 data-translate="serviceCategories">服务类别</h3>
                     <ul class="footer-links">
-                        <li><a href="entry-service.html">入境对接服务</a></li>
-                        <li><a href="daily-service.html">日常生活服务</a></li>
-                        <li><a href="culture-service.html">文化体验活动</a></li>
-                        <li><a href="study-service.html">学习工作支持</a></li>
-                        <li><a href="future-service.html">未来规划服务</a></li>
+                        <li><a href="entry-service.html" data-translate="entryService">入境对接服务</a></li>
+                        <li><a href="daily-service.html" data-translate="dailyService">日常生活服务</a></li>
+                        <li><a href="culture-service.html" data-translate="cultureService">文化体验活动</a></li>
+                        <li><a href="study-service.html" data-translate="studyService">学习工作支持</a></li>
+                        <li><a href="future-service.html" data-translate="futureService">未来规划服务</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3>联系我们</h3>
+                    <h3 data-translate="contactUs">联系我们</h3>
                     <ul class="footer-contact">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>中国青岛市崂山区松岭路99号</span>
+                            <span data-translate="address">中国青岛市崂山区松岭路99号</span>
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
@@ -906,33 +851,246 @@
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
-                            <span>周一至周五: 9:00 - 18:00</span>
+                            <span data-translate="workingHours">周一至周五: 9:00 - 18:00</span>
                         </li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 华易国际服务有限公司. 保留所有权利. | 鲁ICP备12345678号</p>
+                <p data-translate="copyright">&copy; 2023 华易国际服务有限公司. 保留所有权利. | 鲁ICP备12345678号</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // 翻译字典
+        const translations = {
+            zh: {
+                home: "首页",
+                services: "服务",
+                app: "APP下载",
+                about: "关于我们",
+                resources: "资源中心",
+                contact: "联系我们",
+                login: "登录",
+                register: "注册",
+                currentLang: "中文",
+                dailyLifeServiceTitle: "日常生活服务",
+                dailyLifeServiceDesc: "为您解决在中国生活的各种日常需求，让您的生活更便捷、更舒适",
+                aiConsult: "AI咨询",
+                learnProcess: "了解服务流程",
+                serviceContentTitle: "日常生活服务内容",
+                serviceContentDesc: "全方位解决您在中国生活的各种需求",
+                accommodation: "住宿安排",
+                accommodationDesc: "为您找到理想的居住环境",
+                accommodationItem1: "长期/短期公寓租赁",
+                accommodationItem2: "宿舍申请与安排",
+                accommodationItem3: "酒店预订服务",
+                accommodationItem4: "房屋清洁与维护",
+                accommodationItem5: "搬家协助服务",
+                dining: "餐饮服务",
+                diningDesc: "解决您的饮食需求",
+                diningItem1: "本地餐厅推荐",
+                diningItem2: "外卖平台指导",
+                diningItem3: "食材采购指导",
+                diningItem4: "特色美食体验",
+                diningItem5: "饮食健康咨询",
+                shopping: "购物指南",
+                shoppingDesc: "让购物更便捷、更实惠",
+                shoppingItem1: "超市购物指导",
+                shoppingItem2: "线上购物平台使用",
+                shoppingItem3: "特色商品推荐",
+                shoppingItem4: "比价与优惠信息",
+                shoppingItem5: "退换货协助",
+                payment: "缴费服务",
+                paymentDesc: "轻松处理各类生活账单",
+                paymentItem1: "水电燃气费缴纳",
+                paymentItem2: "网络与电话费支付",
+                paymentItem3: "物业费缴纳指导",
+                paymentItem4: "账单翻译与解释",
+                paymentItem5: "自动缴费设置",
+                documents: "证件办理",
+                documentsDesc: "协助办理各类必要证件",
+                documentsItem1: "居留许可办理",
+                documentsItem2: "银行卡开户",
+                documentsItem3: "手机卡办理",
+                documentsItem4: "交通卡办理",
+                documentsItem5: "各类证件更新",
+                health: "医疗健康",
+                healthDesc: "保障您的健康与安全",
+                healthItem1: "医院预约服务",
+                healthItem2: "医疗保险咨询",
+                healthItem3: "药品购买指导",
+                healthItem4: "紧急医疗服务",
+                healthItem5: "健康检查安排",
+                processTitle: "服务流程",
+                processDesc: "简单四步，轻松享受便捷生活服务",
+                step1Title: "需求沟通",
+                step1Desc: "详细了解您的日常生活需求",
+                step2Title: "方案定制",
+                step2Desc: "为您量身定制生活解决方案",
+                step3Title: "服务实施",
+                step3Desc: "专业团队高效执行服务方案",
+                step4Title: "持续支持",
+                step4Desc: "提供后续支持与问题解决",
+                testimonialsTitle: "用户评价",
+                testimonialsDesc: "听听用户对我们服务的真实反馈",
+                testimonial1Location: "来自美国，在青岛工作",
+                testimonial1Content: '"华e通的日常生活服务让我在中国的生活变得无比轻松。从找到理想的公寓到设置水电缴费，每一步都有专业指导。特别感谢他们的医疗协助服务，在我生病时帮我预约了会说英语的医生，解决了大问题。"',
+                testimonial2Location: "来自意大利，在青岛留学",
+                testimonial2Content: '"作为一名留学生，刚到中国时面对各种生活事务感到手足无措。华e通的日常生活服务帮我解决了所有问题：从办理手机卡、银行卡，到熟悉本地超市和外卖APP。他们的服务人员非常耐心，还会定期跟进询问是否有新需求。"',
+                ctaTitle: "开启您的便捷中国生活体验",
+                ctaDesc: "立即预约服务，让日常生活更轻松、更舒适",
+                consultAdvisor: "咨询生活顾问",
+                bookService: "在线预约服务",
+                footerSlogan: "让世界感受中国温度，零距离探索中国文化与生活。",
+                quickLinks: "快速链接",
+                footerHome: "首页",
+                footerServices: "服务项目",
+                footerApp: "APP下载",
+                footerResources: "资源中心",
+                footerAbout: "关于我们",
+                serviceCategories: "服务类别",
+                entryService: "入境对接服务",
+                dailyService: "日常生活服务",
+                cultureService: "文化体验活动",
+                studyService: "学习工作支持",
+                futureService: "未来规划服务",
+                contactUs: "联系我们",
+                address: "中国青岛市崂山区松岭路99号",
+                workingHours: "周一至周五: 9:00 - 18:00",
+                copyright: "&copy; 2023 华易国际服务有限公司. 保留所有权利. | 鲁ICP备12345678号"
+            },
+            en: {
+                home: "Home",
+                services: "Services",
+                app: "Download APP",
+                about: "About Us",
+                resources: "Resources",
+                contact: "Contact Us",
+                login: "Login",
+                register: "Register",
+                currentLang: "English",
+                dailyLifeServiceTitle: "Daily Life Services",
+                dailyLifeServiceDesc: "Solve your daily needs in China for a more convenient and comfortable life",
+                aiConsult: "AI Consultation",
+                learnProcess: "Learn Process",
+                serviceContentTitle: "Daily Life Service Content",
+                serviceContentDesc: "Comprehensive solutions for your various needs in China",
+                accommodation: "Accommodation",
+                accommodationDesc: "Find your ideal living environment",
+                accommodationItem1: "Long/short term apartment rental",
+                accommodationItem2: "Dormitory application & arrangement",
+                accommodationItem3: "Hotel booking service",
+                accommodationItem4: "House cleaning & maintenance",
+                accommodationItem5: "Moving assistance service",
+                dining: "Dining Services",
+                diningDesc: "Solve your dietary needs",
+                diningItem1: "Local restaurant recommendations",
+                diningItem2: "Food delivery platform guidance",
+                diningItem3: "Grocery shopping guidance",
+                diningItem4: "Specialty food experiences",
+                diningItem5: "Dietary health consultation",
+                shopping: "Shopping Guide",
+                shoppingDesc: "Make shopping easier and more affordable",
+                shoppingItem1: "Supermarket shopping guidance",
+                shoppingItem2: "Online shopping platform usage",
+                shoppingItem3: "Specialty product recommendations",
+                shoppingItem4: "Price comparison & discounts",
+                shoppingItem5: "Return & exchange assistance",
+                payment: "Payment Services",
+                paymentDesc: "Easily handle various life bills",
+                paymentItem1: "Water/electricity/gas payments",
+                paymentItem2: "Internet & phone bill payments",
+                paymentItem3: "Property fee payment guidance",
+                paymentItem4: "Bill translation & explanation",
+                paymentItem5: "Automatic payment setup",
+                documents: "Document Services",
+                documentsDesc: "Assist with necessary documentation",
+                documentsItem1: "Residence permit processing",
+                documentsItem2: "Bank account opening",
+                documentsItem3: "SIM card application",
+                documentsItem4: "Transport card application",
+                documentsItem5: "Document renewal services",
+                health: "Medical & Health",
+                healthDesc: "Ensure your health and safety",
+                healthItem1: "Hospital appointment service",
+                healthItem2: "Medical insurance consultation",
+                healthItem3: "Medicine purchasing guidance",
+                healthItem4: "Emergency medical services",
+                healthItem5: "Health check arrangement",
+                processTitle: "Service Process",
+                processDesc: "Four simple steps to enjoy convenient life services",
+                step1Title: "Needs Communication",
+                step1Desc: "Understand your daily life needs in detail",
+                step2Title: "Solution Customization",
+                step2Desc: "Tailor life solutions for you",
+                step3Title: "Service Implementation",
+                step3Desc: "Professional team efficiently executes service plan",
+                step4Title: "Continuous Support",
+                step4Desc: "Provide follow-up support and problem solving",
+                testimonialsTitle: "Testimonials",
+                testimonialsDesc: "Hear real feedback from our users",
+                testimonial1Location: "From USA, working in Qingdao",
+                testimonial1Content: '"ChinaEasy\'s daily life services have made my life in China incredibly easy. From finding the perfect apartment to setting up utility payments, every step came with professional guidance. Special thanks to their medical assistance service that helped me book an English-speaking doctor when I was sick."',
+                testimonial2Location: "From Italy, studying in Qingdao",
+                testimonial2Content: '"As an international student, I felt overwhelmed by all the life tasks when I first arrived in China. ChinaEasy\'s daily life services solved all my problems: from applying for SIM cards and bank accounts to getting familiar with local supermarkets and food delivery apps. Their staff are very patient and follow up regularly."',
+                ctaTitle: "Start Your Convenient Life in China",
+                ctaDesc: "Book services now to make daily life easier and more comfortable",
+                consultAdvisor: "Consult Life Advisor",
+                bookService: "Book Service Online",
+                footerSlogan: "Let the world feel the warmth of China and explore Chinese culture and life up close.",
+                quickLinks: "Quick Links",
+                footerHome: "Home",
+                footerServices: "Services",
+                footerApp: "Download APP",
+                footerResources: "Resources",
+                footerAbout: "About Us",
+                serviceCategories: "Service Categories",
+                entryService: "Entry Services",
+                dailyService: "Daily Life Services",
+                cultureService: "Cultural Experiences",
+                studyService: "Study & Work Support",
+                futureService: "Future Planning",
+                contactUs: "Contact Us",
+                address: "No. 99 Songling Road, Laoshan District, Qingdao, China",
+                workingHours: "Monday-Friday: 9:00 AM - 6:00 PM",
+                copyright: "&copy; 2023 HuaYi International Service Co., Ltd. All rights reserved. | 鲁ICP备12345678号"
+            }
+        };
+
+        // 当前语言状态
+        let currentLanguage = 'zh';
+
+        // 应用语言切换
+        function applyLanguage(lang) {
+            currentLanguage = lang;
+            
+            // 更新所有带有data-translate属性的元素
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.value = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+            
+            // 更新语言切换按钮显示
+            document.querySelector('.language-switcher span').textContent = translations[lang]['currentLang'];
+        }
+
         // 语言切换功能
         document.querySelector('.language-switcher').addEventListener('click', function() {
-            const currentLang = this.querySelector('span').textContent;
-            if(currentLang === 'English') {
-                this.querySelector('span').textContent = '中文';
-                // 实际项目中这里会切换整个页面的语言
-                document.querySelector('.service-hero h1').textContent = 'Daily Life Services';
-                document.querySelector('.service-hero p').textContent = 'Solve your daily needs in China for a more convenient and comfortable life';
-            } else {
-                this.querySelector('span').textContent = 'English';
-                document.querySelector('.service-hero h1').textContent = '日常生活服务';
-                document.querySelector('.service-hero p').textContent = '为您解决在中国生活的各种日常需求，让您的生活更便捷、更舒适';
-            }
+            const newLang = currentLanguage === 'zh' ? 'en' : 'zh';
+            applyLanguage(newLang);
         });
+        
+        // 初始化页面语言
+        applyLanguage(currentLanguage);
         
         // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

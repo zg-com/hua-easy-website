@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华e通 | 一站式来华服务平台</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/service.css">
+    <style>
+        :root {
+            --primary: #1a56db;
+            --secondary: #0e2a5c;
+            --accent: #e53e3e;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 头部导航 */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .logo-text {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--primary);
+        }
+        
+        .logo-text span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 12px;
+            border-radius: 20px;
+            background: var(--light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .language-switcher:hover {
+            background: #e2e8f0;
+        }
+        
+        .btn {
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0d4bc2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 86, 219, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(26, 86, 219, 0.1);
+        }
+        
+        /* 文化体验页面特有样式 */
+        .service-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/culture-bg.jpg') center/cover no-repeat;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .service-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .service-hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .service-container {
+            padding: 50px 0;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            text-align: center;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .service-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .service-feature-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .service-feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            height: 150px;
+            background: linear-gradient(135deg, #8e44ad, #3498db);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 50px;
+        }
+        
+        .feature-content {
+            padding: 25px;
+        }
+        
+        .feature-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #0e2a5c;
+        }
+        
+        .feature-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .feature-content li {
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .feature-content li:before {
+            content: "•";
+            color: #1a56db;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .process-step {
+            flex: 0 0 calc(25% - 20px);
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #1a56db;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .event-section {
+            background: #f8fafc;
+            padding: 60px;
+            border-radius: 12px;
+            margin: 60px 0;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .event-header {
+            padding: 20px;
+            background: #1a56db;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .event-date {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .event-content {
+            padding: 25px;
+        }
+        
+        .event-location {
+            display: flex;
+            align-items: center;
+            margin: 10px 0 20px;
+            color: #64748b;
+        }
+        
+        .event-location i {
+            margin-right: 10px;
+        }
+        
+        .service-cta-section {
+            background: linear-gradient(135deg, #1a56db, #0e2a5c);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            border-radius: 12px;
+            margin: 60px 0;
+        }
+        
+        .service-cta-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .service-cta-section p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn-large {
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+        }
+                /* 页脚 */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .footer-contact li {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #94a3b8;
+            font-size: 14px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .app-container {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .section-header h2 {
+                font-size: 28px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .process-step {
+                flex: 0 0 calc(50% - 20px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .service-hero {
+                padding: 100px 0;
+            }
+            
+            .service-hero h1 {
+                font-size: 32px;
+            }
+            
+            .service-hero p {
+                font-size: 18px;
+            }
+            
+            .process-step {
+                flex: 0 0 100%;
+            }
+            
+            .event-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 - 与主页完全一致 -->
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="../index.html" class="logo">
+                    <div class="logo-text">China<span>Easy</span></div>
+                </a>
+                
+                <nav>
+                    <ul>
+                        <li><a href="../index.html">首页</a></li>
+                        <li><a href="../index.html#services">服务</a></li>
+                        <li><a href="../index.html#app">APP下载</a></li>
+                        <li><a href="../index.html#about">关于我们</a></li>
+                        <li><a href="../index.html#resources">资源中心</a></li>
+                        <li><a href="../index.html#contact">联系我们</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="language-switcher">
+                        <i class="fas fa-globe"></i>
+                        <span>English</span>
+                    </div>
+                    <a href="#" class="btn btn-outline">登录</a>
+                    <a href="#" class="btn btn-primary">注册</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 文化体验页面的Hero区域 -->
+    <section class="service-hero">
+        <div class="container">
+            <h1>文化风光体验</h1>
+            <p>探索中国丰富的文化遗产和壮丽风光，深度体验中华文明的魅力</p>
+            <div class="hero-actions">
+                <a href="../ai-chat.html" class="btn btn-primary">AI咨询</a>
+                <a href="#events" class="btn btn-outline">查看近期活动</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container service-container">
+        <!-- 服务功能区域 -->
+        <section>
+            <h2 class="section-title">文化体验服务</h2>
+            <p class="section-subtitle">沉浸式体验中国传统文化与现代魅力</p>
+            
+            <div class="service-features-grid">
+                <div class="service-feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>传统手工艺体验</h3>
+                        <p>亲手体验中国非物质文化遗产的魅力</p>
+                        <ul>
+                            <li>剪纸艺术工作坊</li>
+                            <li>陶瓷制作体验</li>
+                            <li>丝绸刺绣课程</li>
+                            <li>传统漆器工艺</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #e74c3c, #e67e22);">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>传统音乐与戏曲</h3>
+                        <p>感受中国古典艺术的独特魅力</p>
+                        <ul>
+                            <li>京剧脸谱绘制体验</li>
+                            <li>古筝演奏入门课程</li>
+                            <li>昆曲表演欣赏</li>
+                            <li>民族乐器体验</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #27ae60, #2ecc71);">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>中华美食文化</h3>
+                        <p>品尝并学习制作地道中国美食</p>
+                        <ul>
+                            <li>川菜烹饪课程</li>
+                            <li>茶道与品茶体验</li>
+                            <li>传统点心制作</li>
+                            <li>酒文化品鉴</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-feature-card">
+                    <div class="feature-icon" style="background: linear-gradient(135deg, #f39c12, #f1c40f);">
+                        <i class="fas fa-hiking"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>文化景点游览</h3>
+                        <p>探索中国历史遗迹与自然奇观</p>
+                        <ul>
+                            <li>故宫深度文化游</li>
+                            <li>长城徒步之旅</li>
+                            <li>江南水乡古镇游</li>
+                            <li>少数民族文化探索</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 服务流程区域 -->
+        <section id="process">
+            <h2 class="section-title">文化体验流程</h2>
+            <p class="section-subtitle">四步开启您的中国文化之旅</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>文化兴趣评估</h3>
+                    <p>了解您对中国文化的兴趣方向</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>个性化方案定制</h3>
+                    <p>为您量身打造文化体验计划</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>专业文化导览</h3>
+                    <p>资深文化导师全程陪同讲解</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>深度体验与互动</h3>
+                    <p>沉浸式参与文化实践活动</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 近期活动区域 -->
+        <section id="events" class="event-section">
+            <h2 class="section-title">近期文化活动</h2>
+            <p class="section-subtitle">加入我们的文化体验活动，探索中华文明的精髓</p>
+            
+            <div class="event-card">
+                <div class="event-header">
+                    <div class="event-date">6月22日</div>
+                    <div class="event-type">端午节特别活动</div>
+                </div>
+                <div class="event-content">
+                    <h3>端午节文化体验日</h3>
+                    <div class="event-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>青岛市文化中心</span>
+                    </div>
+                    <p>体验包粽子、制作香囊、龙舟模型制作等端午节传统活动，了解屈原故事和端午节的文化内涵。</p>
+                    <a href="#" class="btn btn-primary">立即报名</a>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-header">
+                    <div class="event-date">7月8日</div>
+                    <div class="event-type">传统艺术工作坊</div>
+                </div>
+                <div class="event-content">
+                    <h3>中国书法工作坊 - 楷书入门</h3>
+                    <div class="event-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>青岛大学艺术学院</span>
+                    </div>
+                    <p>由著名书法家张教授亲自指导，学习楷书基本笔画和结构，了解中国书法的历史与美学。</p>
+                    <a href="#" class="btn btn-primary">立即报名</a>
+                </div>
+            </div>
+            
+            <div class="event-card">
+                <div class="event-header">
+                    <div class="event-date">7月15日</div>
+                    <div class="event-type">茶文化体验</div>
+                </div>
+                <div class="event-content">
+                    <h3>中国传统茶道体验活动</h3>
+                    <div class="event-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>青岛市茶文化博物馆</span>
+                    </div>
+                    <p>学习中国茶道礼仪，品尝不同种类的中国茶，了解茶文化的历史和养生功效。</p>
+                    <a href="#" class="btn btn-primary">立即报名</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 行动号召区域 -->
+        <section class="service-cta-section">
+            <h2>开启您的中国文化探索之旅</h2>
+            <p>立即预约文化体验活动，感受五千年文明的独特魅力</p>
+            <div class="cta-buttons">
+                <a href="../ai-chat.html" class="btn btn-light btn-large">咨询文化顾问</a>
+                <a href="#" class="btn btn-outline-light btn-large">查看活动日历</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 - 与主页完全一致 -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo-text" style="color: white; font-size: 28px; margin-bottom: 20px;">China<span style="color: #f87171;">Easy</span></div>
+                    <p>让世界感受中国温度，零距离探索中国文化与生活。</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">首页</a></li>
+                        <li><a href="../index.html#services">服务项目</a></li>
+                        <li><a href="../index.html#app">APP下载</a></li>
+                        <li><a href="../index.html#resources">资源中心</a></li>
+                        <li><a href="../index.html#about">关于我们</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>服务类别</h3>
+                    <ul class="footer-links">
+                        <li><a href="entry-service.html">入境对接服务</a></li>
+                        <li><a href="daily-service.html">日常生活服务</a></li>
+                        <li><a href="culture-service.html">文化体验活动</a></li>
+                        <li><a href="study-service.html">学习工作支持</a></li>
+                        <li><a href="future-service.html">未来规划服务</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>联系我们</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>中国青岛市崂山区松岭路99号</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+86 532 8888 7777</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@huaeasy.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>周一至周五: 9:00 - 18:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 华易国际服务有限公司. 保留所有权利. | 鲁ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 语言切换功能
+        document.querySelector('.language-switcher').addEventListener('click', function() {
+            const currentLang = this.querySelector('span').textContent;
+            if(currentLang === 'English') {
+                this.querySelector('span').textContent = '中文';
+                // 实际项目中这里会切换整个页面的语言
+                document.querySelector('.service-hero h1').textContent = 'Cultural Experience';
+                document.querySelector('.service-hero p').textContent = 'Explore China\'s rich cultural heritage and magnificent scenery';
+            } else {
+                this.querySelector('span').textContent = 'English';
+                document.querySelector('.service-hero h1').textContent = '文化风光体验';
+                document.querySelector('.service-hero p').textContent = '探索中国丰富的文化遗产和壮丽风光，深度体验中华文明的魅力';
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

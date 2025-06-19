@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华e通 | 一站式来华服务平台</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/service.css">
+    <style>
+        :root {
+            --primary: #1a56db;
+            --secondary: #0e2a5c;
+            --accent: #e53e3e;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .logo-text span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 12px;
+            border-radius: 20px;
+            background: var(--light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .language-switcher:hover {
+            background: #e2e8f0;
+        }
+
+        .btn {
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0d4bc2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 86, 219, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: rgba(26, 86, 219, 0.1);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: url('images/hero-bg.jpg') center/cover no-repeat;
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,128L48,117.3C96,107,192,85,288,101.3C384,117,480,171,576,181.3C672,192,768,160,864,138.7C960,117,1056,107,1152,117.3C1248,128,1344,160,1392,176L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        /* 服务部分 */
+        .services {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            height: 200px;
+            background: linear-gradient(120deg, var(--primary), #3b82f6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .service-content ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .service-content li {
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .service-content li::before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* App下载部分 */
+        .app-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #0e2a5c 100%);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .app-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .app-content {
+            flex: 1;
+        }
+
+        .app-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .app-content p {
+            margin-bottom: 25px;
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .app-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .app-image img {
+            max-width: 300px;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));
+        }
+
+        .app-badges {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .badge {
+            width: 150px;
+            height: 50px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-weight: bold;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* 统计部分 */
+        .stats {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 30px;
+            background: var(--light);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            color: var(--dark);
+        }
+
+        /* 页脚 */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: flex-start;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .app-container {
+                flex-direction: column;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- 头部导航 -->
+<header>
+    <div class="container">
+        <div class="header-inner">
+            <div class="logo">
+                <div class="logo-text">China<span>Easy</span></div>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="#home" data-lang-zh="首页" data-lang-en="Home">首页</a></li>
+                    <li><a href="#services" data-lang-zh="服务" data-lang-en="Services">服务</a></li>
+                    <li><a href="#app" data-lang-zh="APP下载" data-lang-en="APP Download">APP下载</a></li>
+                    <li><a href="#about" data-lang-zh="关于我们" data-lang-en="About Us">关于我们</a></li>
+                    <li><a href="#resources" data-lang-zh="资源中心" data-lang-en="Resources">资源中心</a></li>
+                    <li><a href="#contact" data-lang-zh="联系我们" data-lang-en="Contact">联系我们</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="language-switcher">
+                    <i class="fas fa-globe"></i>
+                    <span>English</span>
+                </div>
+                <a href="#" class="btn btn-outline" data-lang-zh="登录" data-lang-en="Login">登录</a>
+                <a href="#" class="btn btn-primary" data-lang-zh="注册" data-lang-en="Register">注册</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Hero 区域 -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <h1 data-lang-zh="一站式来华生活服务平台" data-lang-en="Your Gateway to Life in China">一站式来华生活服务平台</h1>
+            <p data-lang-zh="让您在中国的旅程更轻松、更精彩！从入境到生活、学习到工作，我们提供全方位服务，助您快速融入中国生活。" data-lang-en="Make your journey in China easier and more exciting! From arrival to daily life, study to work, we provide comprehensive services to help you integrate into Chinese life quickly.">让您在中国的旅程更轻松、更精彩！从入境到生活、学习到工作，我们提供全方位服务，助您快速融入中国生活。</p>
+            <div class="hero-btns">
+                <a href="#services" class="btn btn-primary" data-lang-zh="探索服务" data-lang-en="Explore Services">探索服务</a>
+                <a href="#app" class="btn btn-outline" data-lang-zh="下载APP" data-lang-en="Download APP">下载APP</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 服务部分 -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-header">
+            <h2 data-lang-zh="我们的核心服务" data-lang-en="Our Core Services">我们的核心服务</h2>
+            <p data-lang-zh="为中国的外国居民提供全方位的生活解决方案" data-lang-en="Comprehensive life solutions for foreign residents in China">为中国的外国居民提供全方位的生活解决方案</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- 入境服务 -->
+            <div class="service-card">
+                <a href="services/entry-service.html" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-plane-arrival"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-lang-zh="入境对接服务" data-lang-en="Entry Services">入境对接服务</h3>
+                        <p data-lang-zh="让您的抵达中国之旅无忧无虑" data-lang-en="Make your arrival in China worry-free">让您的抵达中国之旅无忧无虑</p>
+                        <ul>
+                            <li data-lang-zh="入境全程对接" data-lang-en="Full entry assistance">入境全程对接</li>
+                            <li data-lang-zh="入境行程规划" data-lang-en="Entry itinerary planning">入境行程规划</li>
+                            <li data-lang-zh="入境落地接待" data-lang-en="Airport reception">入境落地接待</li>
+                            <li data-lang-zh="入境手续协办" data-lang-en="Entry procedures assistance">入境手续协办</li>
+                            <li data-lang-zh="出站到宿协调" data-lang-en="Transportation to accommodation">出站到宿协调</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 生活服务 -->
+            <div class="service-card">
+                <a href="services/daily-service.html" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-lang-zh="日常生活服务" data-lang-en="Daily Life Services">日常生活服务</h3>
+                        <p data-lang-zh="解决您在中国的日常需求" data-lang-en="Solve your daily needs in China">解决您在中国的日常需求</p>
+                        <ul>
+                            <li data-lang-zh="衣食住宿安排" data-lang-en="Food and accommodation">衣食住宿安排</li>
+                            <li data-lang-zh="交通出行指导" data-lang-en="Transportation guidance">交通出行指导</li>
+                            <li data-lang-zh="日常缴费指导" data-lang-en="Bill payment assistance">日常缴费指导</li>
+                            <li data-lang-zh="证件代理指导" data-lang-en="Document processing">证件代理指导</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 学习工作 -->
+            <div class="service-card">
+                <a href="services/study-service.html" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-lang-zh="学习工作指导" data-lang-en="Study & Work Support">学习工作指导</h3>
+                        <p data-lang-zh="助力您的学业与职业发展" data-lang-en="Support your academic and career development">助力您的学业与职业发展</p>
+                        <ul>
+                            <li data-lang-zh="理论课程服务" data-lang-en="Academic course support">理论课程服务</li>
+                            <li data-lang-zh="课外兴趣学习" data-lang-en="Extracurricular learning">课外兴趣学习</li>
+                            <li data-lang-zh="兼职工作对接" data-lang-en="Part-time job matching">兼职工作对接</li>
+                            <li data-lang-zh="职业问题咨询" data-lang-en="Career consultation">职业问题咨询</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 文化体验 -->
+            <div class="service-card">
+                <a href="services/culture-service.html" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-lang-zh="文化风光体验" data-lang-en="Cultural Experience">文化风光体验</h3>
+                        <p data-lang-zh="探索中国丰富多彩的文化" data-lang-en="Explore China's rich and diverse culture">探索中国丰富多彩的文化</p>
+                        <ul>
+                            <li data-lang-zh="特色非遗活动" data-lang-en="Heritage activities">特色非遗活动</li>
+                            <li data-lang-zh="文化体验课程" data-lang-en="Cultural experience courses">文化体验课程</li>
+                            <li data-lang-zh="旅游规划推荐" data-lang-en="Travel planning">旅游规划推荐</li>
+                            <li data-lang-zh="文化交流活动" data-lang-en="Cultural exchange events">文化交流活动</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+
+            <!-- 未来规划 -->
+            <div class="service-card">
+                <a href="services/future-service.html" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-lang-zh="未来规划指导" data-lang-en="Future Planning">未来规划指导</h3>
+                        <p data-lang-zh="为您的长期发展提供建议" data-lang-en="Provide guidance for your long-term development">为您的长期发展提供建议</p>
+                        <ul>
+                            <li data-lang-zh="长期居留规划" data-lang-en="Long-term residence planning">长期居留规划</li>
+                            <li data-lang-zh="出境回国过渡" data-lang-en="Departure transition">出境回国过渡</li>
+                            <li data-lang-zh="未来就业指导" data-lang-en="Future employment guidance">未来就业指导</li>
+                            <li data-lang-zh="职业生涯规划" data-lang-en="Career planning">职业生涯规划</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+
+            <!-- AI助手 -->
+            <div class="service-card">
+                <a href="ai-chat.html" class="service-link">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-lang-zh="AI智能助手" data-lang-en="AI Assistant">AI智能助手</h3>
+                        <p data-lang-zh="24小时解答您的各类问题" data-lang-en="24/7 assistance for all your questions">24小时解答您的各类问题</p>
+                        <ul>
+                            <li data-lang-zh="多语言实时交流" data-lang-en="Multilingual real-time chat">多语言实时交流</li>
+                            <li data-lang-zh="快速获取信息" data-lang-en="Quick information access">快速获取信息</li>
+                            <li data-lang-zh="个性化建议" data-lang-en="Personalized suggestions">个性化建议</li>
+                            <li data-lang-zh="智能推荐服务" data-lang-en="Smart service recommendations">智能推荐服务</li>
+                        </ul>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- App下载部分 -->
+<section class="app-section" id="app">
+    <div class="container">
+        <div class="app-container">
+            <div class="app-content">
+                <h2 data-lang-zh="下载华e通APP" data-lang-en="Download ChinaEasy APP">下载华e通APP</h2>
+                <p data-lang-zh="随时随地获取服务，体验更便捷的在华生活" data-lang-en="Access services anytime, anywhere for a more convenient life in China">随时随地获取服务，体验更便捷的在华生活</p>
+                <ul>
+                    <li data-lang-zh="AI实时翻译，打破语言障碍" data-lang-en="AI real-time translation, breaking language barriers">AI实时翻译，打破语言障碍</li>
+                    <li data-lang-zh="一键预约各类生活服务" data-lang-en="One-click booking for various life services">一键预约各类生活服务</li>
+                    <li data-lang-zh="个性化文化体验活动推荐" data-lang-en="Personalized cultural experience recommendations">个性化文化体验活动推荐</li>
+                    <li data-lang-zh="紧急求助与24小时客服支持" data-lang-en="Emergency assistance and 24/7 customer support">紧急求助与24小时客服支持</li>
+                    <li data-lang-zh="外籍人士社区交流平台" data-lang-en="Community platform for foreign residents">外籍人士社区交流平台</li>
+                </ul>
+
+                <div class="app-badges">
+                    <div class="badge">
+                        <i class="fab fa-apple"></i>
+                        <span data-lang-zh="App Store" data-lang-en="App Store">App Store</span>
+                    </div>
+                    <div class="badge">
+                        <i class="fab fa-google-play"></i>
+                        <span data-lang-zh="Google Play" data-lang-en="Google Play">Google Play</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-image">
+                <i class="fas fa-mobile-alt" style="font-size: 250px; color: rgba(255,255,255,0.8);"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 统计部分 -->
+<section class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">50万+</div>
+                <div class="stat-label" data-lang-zh="服务用户" data-lang-en="Users Served">服务用户</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">200+</div>
+                <div class="stat-label" data-lang-zh="合作高校" data-lang-en="Partner Universities">合作高校</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98.7%</div>
+                <div class="stat-label" data-lang-zh="用户满意度" data-lang-en="Satisfaction Rate">用户满意度</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15</div>
+                <div class="stat-label" data-lang-zh="服务城市" data-lang-en="Service Cities">服务城市</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo-text" style="color: white; font-size: 28px; margin-bottom: 20px;">China<span style="color: #f87171;">Easy</span></div>
+                <p data-lang-zh="让世界感受中国温度，零距离探索中国文化与生活。" data-lang-en="Connecting the world to China's warmth, exploring Chinese culture and life up close.">让世界感受中国温度，零距离探索中国文化与生活。</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-weixin"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h3 data-lang-zh="快速链接" data-lang-en="Quick Links">快速链接</h3>
+                <ul class="footer-links">
+                    <li><a href="#home" data-lang-zh="首页" data-lang-en="Home">首页</a></li>
+                    <li><a href="#services" data-lang-zh="服务项目" data-lang-en="Services">服务项目</a></li>
+                    <li><a href="#app" data-lang-zh="APP下载" data-lang-en="APP Download">APP下载</a></li>
+                    <li><a href="#resources" data-lang-zh="资源中心" data-lang-en="Resources">资源中心</a></li>
+                    <li><a href="#about" data-lang-zh="关于我们" data-lang-en="About Us">关于我们</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 data-lang-zh="服务类别" data-lang-en="Service Categories">服务类别</h3>
+                <ul class="footer-links">
+                    <li><a href="services/entry-service.html" data-lang-zh="入境对接服务" data-lang-en="Entry Services">入境对接服务</a></li>
+                    <li><a href="services/daily-service.html" data-lang-zh="日常生活服务" data-lang-en="Daily Life Services">日常生活服务</a></li>
+                    <li><a href="services/culture-service.html" data-lang-zh="文化体验活动" data-lang-en="Cultural Experiences">文化体验活动</a></li>
+                    <li><a href="services/study-service.html" data-lang-zh="学习工作支持" data-lang-en="Study & Work Support">学习工作支持</a></li>
+                    <li><a href="services/future-service.html" data-lang-zh="未来规划服务" data-lang-en="Future Planning">未来规划服务</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3 data-lang-zh="联系我们" data-lang-en="Contact Us">联系我们</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-lang-zh="中国青岛市崂山区松岭路99号" data-lang-en="99 Songling Road, Laoshan District, Qingdao, China">中国青岛市崂山区松岭路99号</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+86 532 8888 7777</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@huaeasy.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <span data-lang-zh="周一至周五: 9:00 - 18:00" data-lang-en="Mon-Fri: 9:00 - 18:00">周一至周五: 9:00 - 18:00</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p data-lang-zh="&copy; 2023 华易国际服务有限公司. 保留所有权利. | 鲁ICP备12345678号" data-lang-en="&copy; 2023 ChinaEasy International Services Co., Ltd. All rights reserved. | ICP License: 12345678">&copy; 2023 华易国际服务有限公司. 保留所有权利. | 鲁ICP备12345678号</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 改进的语言切换功能
+    let currentLanguage = 'zh'; // 默认中文
+
+    document.querySelector('.language-switcher').addEventListener('click', function() {
+        currentLanguage = currentLanguage === 'zh' ? 'en' : 'zh';
+        switchLanguage(currentLanguage);
+
+        // 更新语言切换按钮文本
+        const langSpan = this.querySelector('span');
+        langSpan.textContent = currentLanguage === 'zh' ? 'English' : '中文';
+    });
+
+    function switchLanguage(lang) {
+        // 获取所有带有语言属性的元素
+        const elements = document.querySelectorAll('[data-lang-zh][data-lang-en]');
+
+        elements.forEach(element => {
+            const text = lang === 'zh' ? element.getAttribute('data-lang-zh') : element.getAttribute('data-lang-en');
+
+            // 根据元素类型设置文本
+            if (element.tagName === 'INPUT' && element.type === 'submit') {
+                element.value = text;
+            } else {
+                element.textContent = text;
+            }
+        });
+    }
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

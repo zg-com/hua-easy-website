@@ -183,6 +183,8 @@
             padding: 120px 0;
             position: relative;
             overflow: hidden;
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .hero::before {
@@ -230,6 +232,14 @@
         .services {
             padding: 100px 0;
             background: white;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .services.animate {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .section-header {
@@ -358,6 +368,14 @@
             padding: 100px 0;
             position: relative;
             overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .app-section.animate {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .app-container {
@@ -461,6 +479,14 @@
             padding: 80px 0;
             background: white;
             position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .stats.animate {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .stats::before {
@@ -521,6 +547,14 @@
             color: white;
             padding: 70px 0 30px;
             position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        footer.animate {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         footer::before {
@@ -1055,26 +1089,43 @@
     });
     
     // 添加滚动动画效果
-    window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section');
-        sections.forEach(section => {
-            const position = section.getBoundingClientRect();
-            if (position.top < window.innerHeight * 0.8 && position.bottom >= 0) {
-                section.style.opacity = 1;
-                section.style.transform = 'translateY(0)';
+    function animateOnScroll() {
+        const elements = [
+            document.querySelector('.services'),
+            document.querySelector('.app-section'),
+            document.querySelector('.stats'),
+            document.querySelector('footer')
+        ];
+        
+        elements.forEach(element => {
+            if (element) {
+                const position = element.getBoundingClientRect();
+                // 当元素进入视口时添加动画类
+                if (position.top < window.innerHeight * 0.9 && position.bottom >= 0) {
+                    element.classList.add('animate');
+                }
             }
         });
+    }
+
+    // 页面加载时初始化动画
+    document.addEventListener('DOMContentLoaded', function() {
+        // 确保Hero区域立即显示
+        document.querySelector('.hero').style.opacity = "1";
+        document.querySelector('.hero').style.transform = "translateY(0)";
+        
+        // 初始化其他部分的动画状态
+        animateOnScroll();
+        
+        // 确保页脚在页面加载时可见（修复页脚问题）
+        const footer = document.querySelector('footer');
+        if (footer) {
+            footer.classList.add('animate');
+        }
     });
 
-    // 初始化部分元素的动画效果
-    document.addEventListener('DOMContentLoaded', function() {
-        const sections = document.querySelectorAll('section');
-        sections.forEach(section => {
-            section.style.opacity = 0;
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-    });
+    // 滚动时触发动画
+    window.addEventListener('scroll', animateOnScroll);
 </script>
 </body>
 </html>

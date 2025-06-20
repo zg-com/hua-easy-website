@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>华e通 | 一站式来华服务平台</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/service.css">
     <style>
         :root {
             --primary: #1a56db;
@@ -16,6 +14,7 @@
             --dark: #1e293b;
             --gray: #64748b;
             --transition: all 0.3s ease;
+            --ai-gradient: linear-gradient(135deg, #8a2387, #e94057, #f27121);
         }
 
         * {
@@ -29,6 +28,8 @@
             background-color: #f5f7fa;
             color: var(--dark);
             line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
         }
 
         .container {
@@ -64,6 +65,7 @@
             font-weight: 700;
             font-size: 24px;
             color: var(--primary);
+            letter-spacing: -0.5px;
         }
 
         .logo-text span {
@@ -83,6 +85,7 @@
             font-size: 16px;
             transition: var(--transition);
             position: relative;
+            padding: 8px 0;
         }
 
         nav a:hover {
@@ -158,11 +161,26 @@
             background: rgba(26, 86, 219, 0.1);
         }
 
+        .btn-ai {
+            background: var(--ai-gradient);
+            color: white;
+            border-radius: 20px;
+            padding: 8px 20px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(242, 113, 33, 0.3);
+        }
+
+        .btn-ai:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(242, 113, 33, 0.4);
+        }
+
         /* Hero 区域 */
         .hero {
-            background: url('images/hero-bg.jpg') center/cover no-repeat;
+            background: linear-gradient(rgba(10, 30, 70, 0.85), rgba(10, 30, 70, 0.9)), 
+                        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
             color: white;
-            padding: 100px 0;
+            padding: 120px 0;
             position: relative;
             overflow: hidden;
         }
@@ -187,21 +205,25 @@
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             line-height: 1.2;
             margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .hero p {
             font-size: 20px;
             margin-bottom: 30px;
             opacity: 0.9;
+            max-width: 90%;
         }
 
         .hero-btns {
             display: flex;
             gap: 15px;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         /* 服务部分 */
@@ -216,15 +238,30 @@
         }
 
         .section-header h2 {
-            font-size: 36px;
+            font-size: 38px;
             color: var(--secondary);
             margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
         }
 
         .section-header p {
             color: var(--gray);
             max-width: 700px;
-            margin: 0 auto;
+            margin: 20px auto 0;
+            font-size: 18px;
         }
 
         .services-grid {
@@ -239,6 +276,8 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: var(--transition);
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .service-card:hover {
@@ -256,6 +295,10 @@
             font-size: 60px;
         }
 
+        .ai-icon {
+            background: var(--ai-gradient);
+        }
+
         .service-content {
             padding: 25px;
         }
@@ -264,6 +307,7 @@
             font-size: 22px;
             margin-bottom: 15px;
             color: var(--secondary);
+            font-weight: 700;
         }
 
         .service-content ul {
@@ -275,6 +319,8 @@
             padding: 8px 0;
             display: flex;
             align-items: flex-start;
+            position: relative;
+            padding-left: 20px;
         }
 
         .service-content li::before {
@@ -282,6 +328,27 @@
             color: var(--primary);
             font-weight: bold;
             margin-right: 10px;
+            position: absolute;
+            left: 0;
+        }
+
+        .ai-list li::before {
+            background: var(--ai-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .ai-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--ai-gradient);
+            color: white;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
         }
 
         /* App下载部分 */
@@ -289,12 +356,16 @@
             background: linear-gradient(135deg, var(--primary) 0%, #0e2a5c 100%);
             color: white;
             padding: 100px 0;
+            position: relative;
+            overflow: hidden;
         }
 
         .app-container {
             display: flex;
             align-items: center;
             gap: 50px;
+            position: relative;
+            z-index: 2;
         }
 
         .app-content {
@@ -302,8 +373,21 @@
         }
 
         .app-content h2 {
-            font-size: 36px;
+            font-size: 38px;
             margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .app-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
         }
 
         .app-content p {
@@ -312,9 +396,33 @@
             opacity: 0.9;
         }
 
+        .app-content ul {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .app-content li {
+            padding: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .app-content li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
         .app-image {
             flex: 1;
             text-align: center;
+            position: relative;
         }
 
         .app-image img {
@@ -326,6 +434,7 @@
             display: flex;
             gap: 15px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .badge {
@@ -351,6 +460,19 @@
         .stats {
             padding: 80px 0;
             background: white;
+            position: relative;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(26,86,219,0.05)" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,224C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            opacity: 0.3;
         }
 
         .stats-grid {
@@ -358,13 +480,17 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
 
         .stat-item {
-            padding: 30px;
-            background: var(--light);
+            padding: 40px 30px;
+            background: white;
             border-radius: 12px;
             transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
         }
 
         .stat-item:hover {
@@ -377,11 +503,16 @@
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary), #0e2a5c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .stat-label {
             font-size: 18px;
             color: var(--dark);
+            font-weight: 500;
         }
 
         /* 页脚 */
@@ -389,6 +520,17 @@
             background: var(--secondary);
             color: white;
             padding: 70px 0 30px;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--ai-gradient);
         }
 
         .footer-grid {
@@ -427,11 +569,12 @@
             color: #cbd5e1;
             text-decoration: none;
             transition: var(--transition);
+            display: inline-block;
         }
 
         .footer-links a:hover {
             color: white;
-            padding-left: 5px;
+            transform: translateX(5px);
         }
 
         .footer-contact li {
@@ -472,6 +615,39 @@
             font-size: 14px;
         }
 
+        /* AI助手悬浮按钮 */
+        .ai-assistant-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: var(--ai-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 8px 25px rgba(242, 113, 33, 0.4);
+            z-index: 999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .ai-assistant-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(242, 113, 33, 0.5);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(138, 35, 135, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(138, 35, 135, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(138, 35, 135, 0); }
+        }
+
         /* 响应式设计 */
         @media (max-width: 992px) {
             .app-container {
@@ -493,8 +669,12 @@
                 gap: 20px;
             }
 
+            .hero {
+                padding: 80px 0;
+            }
+            
             .hero h1 {
-                font-size: 32px;
+                font-size: 36px;
             }
 
             .hero p {
@@ -511,11 +691,19 @@
             }
 
             .section-header h2 {
-                font-size: 28px;
+                font-size: 32px;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .ai-assistant-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
             }
         }
     </style>
@@ -535,7 +723,7 @@
                     <li><a href="#services" data-lang-zh="服务" data-lang-en="Services">服务</a></li>
                     <li><a href="#app" data-lang-zh="APP下载" data-lang-en="APP Download">APP下载</a></li>
                     <li><a href="#about" data-lang-zh="关于我们" data-lang-en="About Us">关于我们</a></li>
-                    <li><a href="#resources" data-lang-zh="资源中心" data-lang-en="Resources">资源中心</a></li>
+                    <li><a href="ai-chat.html" class="btn-ai" data-lang-zh="AI助手" data-lang-en="AI Assistant">AI助手</a></li>
                     <li><a href="#contact" data-lang-zh="联系我们" data-lang-en="Contact">联系我们</a></li>
                 </ul>
             </nav>
@@ -545,8 +733,8 @@
                     <i class="fas fa-globe"></i>
                     <span>English</span>
                 </div>
-                <a href="#" class="btn btn-outline" data-lang-zh="登录" data-lang-en="Login">登录</a>
-                <a href="#" class="btn btn-primary" data-lang-zh="注册" data-lang-en="Register">注册</a>
+                <a href="login.html" class="btn btn-outline" data-lang-zh="登录" data-lang-en="Login">登录</a>
+                <a href="login.html" class="btn btn-primary" data-lang-zh="注册" data-lang-en="Register">注册</a>
             </div>
         </div>
     </div>
@@ -561,6 +749,7 @@
             <div class="hero-btns">
                 <a href="#services" class="btn btn-primary" data-lang-zh="探索服务" data-lang-en="Explore Services">探索服务</a>
                 <a href="#app" class="btn btn-outline" data-lang-zh="下载APP" data-lang-en="Download APP">下载APP</a>
+                <a href="ai-chat.html" class="btn btn-ai" data-lang-zh="体验AI助手" data-lang-en="Try AI Assistant">体验AI助手</a>
             </div>
         </div>
     </div>
@@ -674,13 +863,14 @@
             <!-- AI助手 -->
             <div class="service-card">
                 <a href="ai-chat.html" class="service-link">
-                    <div class="service-icon">
+                    <div class="service-icon ai-icon">
                         <i class="fas fa-robot"></i>
                     </div>
+                    <div class="ai-badge" data-lang-zh="热门" data-lang-en="Popular">热门</div>
                     <div class="service-content">
                         <h3 data-lang-zh="AI智能助手" data-lang-en="AI Assistant">AI智能助手</h3>
                         <p data-lang-zh="24小时解答您的各类问题" data-lang-en="24/7 assistance for all your questions">24小时解答您的各类问题</p>
-                        <ul>
+                        <ul class="ai-list">
                             <li data-lang-zh="多语言实时交流" data-lang-en="Multilingual real-time chat">多语言实时交流</li>
                             <li data-lang-zh="快速获取信息" data-lang-en="Quick information access">快速获取信息</li>
                             <li data-lang-zh="个性化建议" data-lang-en="Personalized suggestions">个性化建议</li>
@@ -772,7 +962,7 @@
                     <li><a href="#home" data-lang-zh="首页" data-lang-en="Home">首页</a></li>
                     <li><a href="#services" data-lang-zh="服务项目" data-lang-en="Services">服务项目</a></li>
                     <li><a href="#app" data-lang-zh="APP下载" data-lang-en="APP Download">APP下载</a></li>
-                    <li><a href="#resources" data-lang-zh="资源中心" data-lang-en="Resources">资源中心</a></li>
+                    <li><a href="ai-chat.html" data-lang-zh="AI助手" data-lang-en="AI Assistant">AI助手</a></li>
                     <li><a href="#about" data-lang-zh="关于我们" data-lang-en="About Us">关于我们</a></li>
                 </ul>
             </div>
@@ -817,6 +1007,11 @@
     </div>
 </footer>
 
+<!-- AI助手悬浮按钮 -->
+<a href="ai-chat.html" class="ai-assistant-btn">
+    <i class="fas fa-robot"></i>
+</a>
+
 <script>
     // 改进的语言切换功能
     let currentLanguage = 'zh'; // 默认中文
@@ -856,6 +1051,28 @@
                     behavior: 'smooth'
                 });
             }
+        });
+    });
+    
+    // 添加滚动动画效果
+    window.addEventListener('scroll', function() {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            const position = section.getBoundingClientRect();
+            if (position.top < window.innerHeight * 0.8 && position.bottom >= 0) {
+                section.style.opacity = 1;
+                section.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    // 初始化部分元素的动画效果
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         });
     });
 </script>
